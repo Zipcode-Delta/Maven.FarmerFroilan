@@ -20,6 +20,22 @@ class FarmHouseTest {
     }
 
     @Test
+    public void testNullConstructor() {
+        //make sure that if no args are given,
+        //and empty farmHouse is constructed
+        //may or may not be needed
+    }
+
+    @Test
+    public void testArgsConstructor() {
+        //make sure that if an arrayList is passed
+        //as an arg thru the constructor
+        //the farmHouse will take the list
+        //as the contents of the farmHouse
+        //may not need this either
+    }
+
+    @Test
     public void test1addPerson() {
         //test that a person can be added before being constructed
     }
@@ -27,6 +43,11 @@ class FarmHouseTest {
     @Test
     public void test2addPerson() {
         //test that a person can be added after being constructed
+    }
+
+    @Test
+    public void test3AddPerson() {
+        //test that a Person constructed with the generic Eater can be added
     }
 
     @Test
