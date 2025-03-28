@@ -15,4 +15,9 @@ public class Chicken extends Animal implements Produce{
     public boolean hasBeenFertilized() {
         return false;
     }
+
+    @Override
+    public boolean hasBeenHarvested() {
+        return false;
+    }
 }
