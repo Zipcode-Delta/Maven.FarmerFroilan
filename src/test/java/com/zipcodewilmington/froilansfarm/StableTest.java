@@ -56,6 +56,16 @@ class StableTest {
     }
 
     @Test
+    public void test1getHorseByName() {
+        //test that a non-existent horse cannot be returned
+    }
+
+    @Test
+    public void test2getHorseByName() {
+        //test that a horse in the array can be returned
+    }
+
+    @Test
     public void test1removeHorse() {
         //test that a Horse can be removed
     }

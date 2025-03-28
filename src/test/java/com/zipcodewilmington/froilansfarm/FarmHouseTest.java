@@ -46,8 +46,18 @@ class FarmHouseTest {
     }
 
     @Test
-    public void test3AddPerson() {
+    public void test3addPerson() {
         //test that a Person constructed with the generic Eater can be added
+    }
+
+    @Test
+    public void test1getPersonByName() {
+        //test that a non-existent person cannot be returned
+    }
+
+    @Test
+    public void test2getPersonByName() {
+        //check that a person that does exist can be returned
     }
 
     @Test
