@@ -9,10 +9,10 @@ import org.junit.jupiter.api.Test;
 
 class FarmHouseTest {
 
-//    @BeforeEach
-//    void setUp() {
-//        FarmHouse.clear();
-//    }
+    @BeforeEach
+    void setUp() {
+        FarmHouse.clear();
+    }
 
     @Test
     public void testInstanceOfShelter() {
