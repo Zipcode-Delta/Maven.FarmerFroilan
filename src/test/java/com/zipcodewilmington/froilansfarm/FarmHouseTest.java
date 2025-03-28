@@ -15,7 +15,7 @@ class FarmHouseTest {
 //    }
 
     @Test
-    public void test1instanceOfShelter() {
+    public void testInstanceOfShelter() {
         //check inheritance carried over
     }
 
@@ -36,7 +36,7 @@ class FarmHouseTest {
 
     @Test
     public void test2removePerson() {
-
+        //test that a Person can be removed by name
     }
 
     @Test
