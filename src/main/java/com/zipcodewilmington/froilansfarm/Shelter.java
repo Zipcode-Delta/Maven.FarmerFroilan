@@ -6,6 +6,8 @@ import java.util.List;
 public class Shelter<LivingThings extends Eater> {
     private volatile List<LivingThings> shelter = new ArrayList<>();
 
+    public Shelter() {}
+
     public void clear() {
         shelter.clear();
     }

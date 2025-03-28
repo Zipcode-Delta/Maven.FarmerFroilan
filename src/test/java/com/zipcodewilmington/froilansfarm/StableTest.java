@@ -6,24 +6,25 @@ import com.zipcodewilmington.froilansfarm.Horse;
 import com.zipcodewilmington.froilansfarm.Shelter;
 import com.zipcodewilmington.froilansfarm.Stable;
 import org.junit.jupiter.api.Test;
+import java.util.Collection;
 
 class StableTest {
 
-//    @BeforeEach
-//    void setUp() {
-//        Stable.clear();
-//    }
+    @BeforeEach
+    void setUp() {
+        Stable.clear();
+    }
 
     @Test
-    public void testInstanceOfShelter() {
-        //check inheritance carried over
+    public void testInstanceOf() {
+        Stable stable = new Stable();
+        assertFalse(stable instanceof Collection);
     }
 
     @Test
     public void testNullConstructor() {
-        //make sure that if no args are given,
-        //an empty stable is constructed
-        //may or may not be needed
+        Stable stable = new Stable();
+        assertNotNull(stable);
     }
 
     @Test

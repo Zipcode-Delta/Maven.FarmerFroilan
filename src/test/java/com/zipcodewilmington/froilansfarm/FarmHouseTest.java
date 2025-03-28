@@ -6,24 +6,26 @@ import com.zipcodewilmington.froilansfarm.Person;
 import com.zipcodewilmington.froilansfarm.Shelter;
 import com.zipcodewilmington.froilansfarm.FarmHouse;
 import org.junit.jupiter.api.Test;
+import java.util.Collection;
 
 class FarmHouseTest {
 
     @BeforeEach
     void setUp() {
         FarmHouse.clear();
+        FarmHouse farmHouseTest = new FarmHouse();
     }
 
     @Test
-    public void testInstanceOfShelter() {
-        //check inheritance carried over
+    public void testInstanceOf() {
+        FarmHouse farmHouse = new FarmHouse();
+        assertFalse(farmHouse instanceof Collection);
     }
 
     @Test
     public void testNullConstructor() {
-        //make sure that if no args are given,
-        //and empty farmHouse is constructed
-        //may or may not be needed
+        FarmHouse farmHouse = new FarmHouse();
+        assertNotNull(farmHouse);
     }
 
     @Test
@@ -37,7 +39,7 @@ class FarmHouseTest {
 
     @Test
     public void test1addPerson() {
-        //test that a person can be added before being constructed
+        
     }
 
     @Test
@@ -72,7 +74,7 @@ class FarmHouseTest {
 
     @Test
     public void test1getNumOfPeople() {
-        //test that empty farmhouse returns 0
+        int expected = 0;
     }
 
     @Test

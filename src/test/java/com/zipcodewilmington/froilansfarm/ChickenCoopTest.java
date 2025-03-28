@@ -6,24 +6,25 @@ import com.zipcodewilmington.froilansfarm.Chicken;
 import com.zipcodewilmington.froilansfarm.Shelter;
 import com.zipcodewilmington.froilansfarm.ChickenCoop;
 import org.junit.jupiter.api.Test;
+import java.util.Collection;
 
 class ChickenCoopTest {
 
-//    @BeforeEach
-//    void setUp() {
-//        ChickenCoop.clear();
-//    }
+    @BeforeEach
+    void setUp() {
+        ChickenCoop.clear();
+    }
 
     @Test
     public void testInstanceOf() {
-        //check inheritance
+        ChickenCoop chickenCoop = new ChickenCoop();
+        assertFalse(chickenCoop instanceof Collection);
     }
 
     @Test
     public void testNullConstructor() {
-        //if no args are given during construction
-        //should return as an empty ChickenCoop
-        //may or may not be needed
+        ChickenCoop chickenCoop = new ChickenCoop();
+        assertNotNull(chickenCoop);
     }
 
     @Test
