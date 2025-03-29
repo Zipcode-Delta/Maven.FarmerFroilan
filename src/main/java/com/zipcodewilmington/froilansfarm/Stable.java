@@ -1,30 +1,29 @@
 package com.zipcodewilmington.froilansfarm;
 
 public class Stable {
-    private static Shelter<Horse> stable = new Shelter<>();
+    private Shelter<Horse> stable = new Shelter<>();
     //does this need to be static?
 
-    public static void clear() {
-        stable.clear();
+    Stable() {
     }
 
-    public static int getNumOfHorses() {
+    public int getNumOfHorses() {
         return stable.getNumberOfThings();
     }
 
-    public static void add(Horse horse) {
+    public void add(Horse horse) {
         stable.add(horse);
     }
 
-    public static void remove(Horse horse) {
+    public void remove(Horse horse) {
         stable.removeThing(horse);
     }
 
-    public static void remove(String name) {
+    public void remove(String name) {
         stable.removeByName(name);
     }
 
-    public static Horse getByName(String name) {
+    public Horse getByName(String name) {
         return stable.getByName(name);
     }
 }

@@ -1,17 +1,11 @@
 package com.zipcodewilmington.froilansfarm;
 
-import org.junit.jupiter.api.BeforeEach;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 import java.util.Collection;
 
 class StableTest {
-
-    @BeforeEach
-    void setUp() {
-        Stable.clear();
-    }
 
     @Test
     public void testInstanceOf() {
@@ -61,37 +55,54 @@ class StableTest {
         Stable stableTest = new Stable();
         Horse horse = new Horse();
         horse.setName("Henry");
+        stableTest.add(horse);
         Horse actual = stableTest.getByName("Henry");
         assertEquals(horse, actual);
-        //test that a horse in the array can be returned
     }
 
     @Test
     public void test1removeHorse() {
-        //test that a Horse can be removed
+        Stable stableTest = new Stable();
+        Horse horse = new Horse();
+        stableTest.add(horse);
+        assertEquals(1, stableTest.getNumOfHorses());
+        stableTest.remove(horse);
+        assertEquals(0, stableTest.getNumOfHorses());
     }
 
     @Test
     public void test2removeHorse() {
-        //test that a Horse can be removed by name
+        Stable stableTest = new Stable();
+        Horse horse = new Horse();
+        horse.setName("Henry");
+        stableTest.add(horse);
+        assertEquals(1, stableTest.getNumOfHorses());
+        stableTest.remove("Henry");
+        assertEquals(0, stableTest.getNumOfHorses());
     }
 
     @Test
     public void test1getNumOfHorses() {
-        //test that an empty stable returns 0
+        Stable stableTest = new Stable();
+        assertEquals(0, stableTest.getNumOfHorses());
     }
 
     @Test
     public void test2getNumOfHorses() {
-        //confirm that the number of horses
-        //in the stable changes as horses are added
+        Stable stableTest = new Stable();
+        stableTest.add(new Horse());
+        stableTest.add(new Horse());
+        assertEquals(2, stableTest.getNumOfHorses());
     }
 
     @Test
     public void test3getNumOfHorses() {
-        //confirm that when this method is called on a specific stable
-        //it only returns the number for that specific stable
-        //ie: if stable1 has 2 horses and stable3 has 4
-        //stable1.getNumOfHorses() should return 2, not 4
+        Stable stableTest1 = new Stable();
+        Stable stableTest2 = new Stable();
+        stableTest1.add(new Horse());
+        stableTest1.add(new Horse());
+        stableTest2.add(new Horse());
+        assertEquals(2, stableTest1.getNumOfHorses());
+        assertEquals(1, stableTest2.getNumOfHorses());
     }
 }
