@@ -28,15 +28,6 @@ class StableTest {
     }
 
     @Test
-    public void testArgsConstructor() {
-        //make sure that if an arrayList is passed
-        //as an arg thru the constructor
-        //the stable will take the list
-        //as the contents of the stable
-        //may not need this either
-    }
-
-    @Test
     public void test1addHorse() {
         //test that a Horse can be added before construction
     }

@@ -22,15 +22,6 @@ class FarmHouseTest {
     }
 
     @Test
-    public void testArgsConstructor() {
-        //make sure that if an arrayList is passed
-        //as an arg thru the constructor
-        //the farmHouse will take the list
-        //as the contents of the farmHouse
-        //may not need this either
-    }
-
-    @Test
     public void test1addPerson() {
         FarmHouse farmHouseTest = new FarmHouse();
         Farmer person = new Farmer();
@@ -57,6 +48,26 @@ class FarmHouseTest {
     }
 
     @Test
+    public void test1getNumOfPeople() {
+        FarmHouse farmHouseTest = new FarmHouse();
+        int expected = 0;
+        int actual = farmHouseTest.getNumOfPeople();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void test2getNumOfPeople() {
+        FarmHouse farmHouseTest = new FarmHouse();
+        Person farmer = new Farmer();
+        Person pilot = new Pilot();
+        farmHouseTest.add(farmer);
+        farmHouseTest.add(pilot);
+        int expected = 2;
+        int actual = farmHouseTest.getNumOfPeople();
+        assertEquals(expected, actual);
+    }
+
+    @Test
     public void test1getPersonByName() {
         FarmHouse farmHouseTest = new FarmHouse();
         Person person = new Farmer();
@@ -78,23 +89,33 @@ class FarmHouseTest {
 
     @Test
     public void test1removePerson() {
-        //test that a Person can be removed
+        FarmHouse farmHouseTest = new FarmHouse();
+        Person person = new Farmer();
+        farmHouseTest.add(person);
+        assertEquals(1, farmHouseTest.getNumOfPeople());
+        farmHouseTest.remove(person);
+        assertEquals(0, farmHouseTest.getNumOfPeople());
     }
 
     @Test
     public void test2removePerson() {
-        //test that a Person can be removed by name
+        FarmHouse farmHouseTest = new FarmHouse();
+        Person person = new Pilot();
+        person.setName("Frank");
+        farmHouseTest.add(person);
+        assertEquals(1, farmHouseTest.getNumOfPeople());
+        farmHouseTest.remove("Frank");
+        assertEquals(0, farmHouseTest.getNumOfPeople());
     }
 
     @Test
-    public void test1getNumOfPeople() {
-        int expected = 0;
-    }
-
-    @Test
-    public void test2getNumOfPeople() {
-        //test that the correct number is returned
-        //as people are added to the farmhouse
+    public void test1clearFarmHouse() {
+        FarmHouse farmHouseTest = new FarmHouse();
+        Person person = new Pilot();
+        farmHouseTest.add(person);
+        assertEquals(1, farmHouseTest.getNumOfPeople());
+        farmHouseTest.clear();
+        assertEquals(0, farmHouseTest.getNumOfPeople());
     }
 
 }

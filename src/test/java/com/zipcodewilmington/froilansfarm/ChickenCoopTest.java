@@ -28,13 +28,6 @@ class ChickenCoopTest {
     }
 
     @Test
-    public void testArgsConstructor() {
-        //if arrayList is passed as arg
-        //take arrayList as contents of ChickenCoop
-        //may not be needed
-    }
-
-    @Test
     public void test1addChicken() {
         //test that Chicken can be added before construction
     }
