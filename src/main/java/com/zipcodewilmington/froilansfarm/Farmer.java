@@ -1,6 +1,8 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class Farmer extends Person implements Rider, Botanist{
+public class Farmer extends Person implements Botanist{
+
+
     @Override
     public String makeNoise() {
         return "";
@@ -13,11 +15,20 @@ public class Farmer extends Person implements Rider, Botanist{
 
     @Override
     public String mount() {
-        return "";
+        if (this.getName().equals("Farmer")){
+            return "Mounting tractor";
+        }
+
+        return "unable to mount Crop Duster";
     }
 
     @Override
     public String dismount() {
-        return "";
+        if (this.getName().equals("Farmer")){
+            return "Dismounting tractor";
+        }
+        return "unable to mount Crop Duster";
     }
+
+
 }
