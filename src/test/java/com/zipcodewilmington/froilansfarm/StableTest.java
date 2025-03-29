@@ -2,9 +2,7 @@ package com.zipcodewilmington.froilansfarm;
 
 import org.junit.jupiter.api.BeforeEach;
 import static org.junit.jupiter.api.Assertions.*;
-import com.zipcodewilmington.froilansfarm.Horse;
-import com.zipcodewilmington.froilansfarm.Shelter;
-import com.zipcodewilmington.froilansfarm.Stable;
+
 import org.junit.jupiter.api.Test;
 import java.util.Collection;
 
@@ -17,43 +15,54 @@ class StableTest {
 
     @Test
     public void testInstanceOf() {
-        Stable stable = new Stable();
-        assertFalse(stable instanceof Collection);
+        Stable stableTest = new Stable();
+        assertFalse(stableTest instanceof Collection);
     }
 
     @Test
     public void testNullConstructor() {
-        Stable stable = new Stable();
-        assertNotNull(stable);
+        Stable stableTest = new Stable();
+        assertNotNull(stableTest);
     }
 
     @Test
     public void test1addHorse() {
-        //test that a Horse can be added before construction
+        Stable stableTest = new Stable();
+        stableTest.add(new Horse());
+        assertEquals(1, stableTest.getNumOfHorses());
     }
 
     @Test
     public void test2addHorse() {
-        //test that a Horse can be added after being constructed
+        Stable stableTest = new Stable();
+        Horse horse = new Horse();
+        stableTest.add(horse);
+        assertEquals(1, stableTest.getNumOfHorses());
     }
 
     @Test
     public void test3addHorse() {
-        //test that a Horse constructed with the generic Animal can be added
-    }
-
-    @Test
-    public void test4addHorse() {
-        //test that a Horse constructed with the generic Eater can be added
+        Stable stableTest = new Stable();
+        Horse horse1 = new Horse();
+        Horse horse2 = new Horse();
+        stableTest.add(horse1);
+        stableTest.add(horse2);
+        assertEquals(2, stableTest.getNumOfHorses());
     }
 
     @Test
     public void test1getHorseByName() {
-        //test that a non-existent horse cannot be returned
+        Stable stableTest = new Stable();
+        assertNull(stableTest.getByName("Henry"));
     }
 
     @Test
     public void test2getHorseByName() {
+        Stable stableTest = new Stable();
+        Horse horse = new Horse();
+        horse.setName("Henry");
+        Horse actual = stableTest.getByName("Henry");
+        assertEquals(horse, actual);
         //test that a horse in the array can be returned
     }
 

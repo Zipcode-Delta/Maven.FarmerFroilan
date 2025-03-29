@@ -4,10 +4,16 @@ import static org.junit.jupiter.api.Assertions.*;
 import com.zipcodewilmington.froilansfarm.Person;
 import com.zipcodewilmington.froilansfarm.Shelter;
 import com.zipcodewilmington.froilansfarm.FarmHouse;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.Collection;
 
 class FarmHouseTest {
+
+    @BeforeEach
+    public void setUp() {
+        FarmHouse.clear();
+    }
 
     @Test
     public void testInstanceOf() {
@@ -69,6 +75,12 @@ class FarmHouseTest {
     @Test
     public void test1getPersonByName() {
         FarmHouse farmHouseTest = new FarmHouse();
+        assertNull(farmHouseTest.getByName("Frank"));
+    }
+
+    @Test
+    public void test2getPersonByName() {
+        FarmHouse farmHouseTest = new FarmHouse();
         Person person = new Farmer();
         farmHouseTest.add(person);
         person.setName("Froilan");
@@ -77,7 +89,7 @@ class FarmHouseTest {
     }
 
     @Test
-    public void test2getPersonByName() {
+    public void test3getPersonByName() {
         FarmHouse farmHouseTest = new FarmHouse();
         Person person = new Pilot();
         farmHouseTest.add(person);
