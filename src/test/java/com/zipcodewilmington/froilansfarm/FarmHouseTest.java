@@ -1,6 +1,5 @@
 package com.zipcodewilmington.froilansfarm;
 
-import org.junit.jupiter.api.BeforeEach;
 import static org.junit.jupiter.api.Assertions.*;
 import com.zipcodewilmington.froilansfarm.Person;
 import com.zipcodewilmington.froilansfarm.Shelter;
@@ -9,12 +8,6 @@ import org.junit.jupiter.api.Test;
 import java.util.Collection;
 
 class FarmHouseTest {
-
-    @BeforeEach
-    void setUp() {
-        FarmHouse.clear();
-        FarmHouse farmHouseTest = new FarmHouse();
-    }
 
     @Test
     public void testInstanceOf() {
@@ -39,27 +32,48 @@ class FarmHouseTest {
 
     @Test
     public void test1addPerson() {
-        
+        FarmHouse farmHouseTest = new FarmHouse();
+        Farmer person = new Farmer();
+        farmHouseTest.add(person);
+        assertEquals(1, farmHouseTest.getNumOfPeople());
     }
 
     @Test
     public void test2addPerson() {
-        //test that a person can be added after being constructed
+        FarmHouse farmHouseTest = new FarmHouse();
+        Pilot pilot = new Pilot();
+        farmHouseTest.add(pilot);
+        assertEquals(1, farmHouseTest.getNumOfPeople());
     }
 
     @Test
     public void test3addPerson() {
-        //test that a Person constructed with the generic Eater can be added
+        FarmHouse farmHouseTest = new FarmHouse();
+        Person person1 = new Farmer();
+        Person person2 = new Pilot();
+        farmHouseTest.add(person1);
+        farmHouseTest.add(person2);
+        assertEquals(2, farmHouseTest.getNumOfPeople());
     }
 
     @Test
     public void test1getPersonByName() {
-        //test that a non-existent person cannot be returned
+        FarmHouse farmHouseTest = new FarmHouse();
+        Person person = new Farmer();
+        farmHouseTest.add(person);
+        person.setName("Froilan");
+        Person actual = farmHouseTest.getByName("Froilan");
+        assertEquals(person, actual);
     }
 
     @Test
     public void test2getPersonByName() {
-        //check that a person that does exist can be returned
+        FarmHouse farmHouseTest = new FarmHouse();
+        Person person = new Pilot();
+        farmHouseTest.add(person);
+        person.setName("Froilanda");
+        Person actual = farmHouseTest.getByName("Froilanda");
+        assertEquals(person, actual);
     }
 
     @Test
