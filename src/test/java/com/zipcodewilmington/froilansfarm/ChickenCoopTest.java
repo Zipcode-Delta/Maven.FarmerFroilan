@@ -10,10 +10,10 @@ import java.util.Collection;
 
 class ChickenCoopTest {
 
-    @BeforeEach
-    void setUp() {
-        ChickenCoop.clear();
-    }
+//    @BeforeEach
+//    void setUp() {
+//        ChickenCoop.clear();
+//    }
 
     @Test
     public void testInstanceOf() {
@@ -29,22 +29,21 @@ class ChickenCoopTest {
 
     @Test
     public void test1addChicken() {
-        //test that Chicken can be added before construction
+        ChickenCoop chickenCoop = new ChickenCoop();
+        chickenCoop.add(new Chicken());
+        assertEquals(1, chickenCoop.getNumOfChickens());
     }
 
     @Test
     public void test2addChicken() {
+        ChickenCoop chickenCoop = new ChickenCoop();
+
         //test that Chicken can be added after construction
     }
 
     @Test
     public void test3addChicken() {
         //check that construction with generic Animal can still be added
-    }
-
-    @Test
-    public void test4addChicken() {
-        //check that constructor with generic Eater can still be added
     }
 
     @Test
