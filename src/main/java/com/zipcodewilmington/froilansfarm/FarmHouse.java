@@ -21,12 +21,12 @@ public class FarmHouse {
         farmhouse.removeThing(person);
     }
 
-//    public static void remove(String name) {
-//        farmhouse.removeByName(name);
-//    }
+    public static void remove(String name) {
+        farmhouse.removeByName(name);
+    }
 
-//    public static Person getByName(String name) {
-//        return farmhouse.getByName(name);
-//    }
+    public static Person getByName(String name) {
+        return farmhouse.getByName(name);
+    }
 
 }
