@@ -5,7 +5,7 @@ public class Crop implements Produce {
 
     private String name;
     private int numberOfEdibleCrops;
-    private boolean harvested;
+    public boolean harvested;
 
     public Crop(String name) {
         this.name = name;
@@ -13,14 +13,24 @@ public class Crop implements Produce {
         this.harvested = false;
     }
 
+    public Crop() {
+    }
+
         public boolean harvest () {
             if (hasBeenHarvested()) {
-                return !this.harvested;
+                return this.harvested;
             }
-            return  this.harvested;
+            return  !this.harvested;
         }
 
-        public String getName () {
+    public boolean hasBeenHarvested() {
+        if (this.name.equalsIgnoreCase("EarCorn")){
+            return true;
+        }
+   return false;
+    }
+
+    public String getName () {
             return name;
         }
 
@@ -29,11 +39,18 @@ public class Crop implements Produce {
         }
 
         public int getNumberOfEdibleCrops () {
-            return 0;
-            //NumberOfEdibleCrops;
+            return numberOfEdibleCrops;
+            //if (NumberOfEdibleCrops>0)
+            // return edibleCrops;
         }
 
+    public int addEdibleCrops(int edible) {
 
+        if (edible > 0) {
+            numberOfEdibleCrops += edible;
+        }
+        return numberOfEdibleCrops;
+    }
         @Override
         public int yield () {
             return 0;
@@ -44,10 +61,7 @@ public class Crop implements Produce {
             return true;
         }
 
-        @Override
-        public boolean hasBeenHarvested () {
-            return true;
-        }
+
     }
 
 

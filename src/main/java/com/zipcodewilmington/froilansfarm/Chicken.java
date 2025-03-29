@@ -1,6 +1,6 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class Chicken extends Animal implements Produce{
+public class Chicken extends Animal implements Produce {
     @Override
     public String makeNoise() {
         return "";
@@ -16,8 +16,5 @@ public class Chicken extends Animal implements Produce{
         return true;
     }
 
-    @Override
-    public boolean hasBeenHarvested() {
-        return false;
-    }
+
 }
