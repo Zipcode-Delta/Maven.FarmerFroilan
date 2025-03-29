@@ -7,6 +7,10 @@ public class Stable {
     Stable() {
     }
 
+    public void clearStable() {
+        stable.clear();
+    }
+
     public int getNumOfHorses() {
         return stable.getNumberOfThings();
     }

@@ -105,4 +105,14 @@ class StableTest {
         assertEquals(2, stableTest1.getNumOfHorses());
         assertEquals(1, stableTest2.getNumOfHorses());
     }
+
+    @Test
+    public void test1clearStable() {
+        Stable stableTest = new Stable();
+        stableTest.add(new Horse());
+        stableTest.add(new Horse());
+        assertEquals(2, stableTest.getNumOfHorses());
+        stableTest.clearStable();
+        assertEquals(0, stableTest.getNumOfHorses());
+    }
 }

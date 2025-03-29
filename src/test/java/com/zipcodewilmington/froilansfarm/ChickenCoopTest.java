@@ -10,11 +10,6 @@ import java.util.Collection;
 
 class ChickenCoopTest {
 
-//    @BeforeEach
-//    void setUp() {
-//        ChickenCoop.clear();
-//    }
-
     @Test
     public void testInstanceOf() {
         ChickenCoop chickenCoop = new ChickenCoop();
@@ -37,40 +32,96 @@ class ChickenCoopTest {
     @Test
     public void test2addChicken() {
         ChickenCoop chickenCoop = new ChickenCoop();
-
-        //test that Chicken can be added after construction
+        Chicken chicken = new Chicken();
+        chickenCoop.add(chicken);
+        assertEquals(1, chickenCoop.getNumOfChickens());
     }
 
     @Test
     public void test3addChicken() {
-        //check that construction with generic Animal can still be added
+        ChickenCoop chickenCoop = new ChickenCoop();
+        Chicken chicken1 = new Chicken();
+        Chicken chicken2 = new Chicken();
+        chickenCoop.add(chicken1);
+        chickenCoop.add(chicken2);
+        assertEquals(2, chickenCoop.getNumOfChickens());
+    }
+
+    @Test
+    public void test1getChickenByName() {
+        ChickenCoop chickenCoop = new ChickenCoop();
+        assertNull(chickenCoop.getByName("Penny"));
+    }
+
+    @Test
+    public void test2getChickenByName() {
+        ChickenCoop chickenCoop = new ChickenCoop();
+        Chicken chicken = new Chicken();
+        chicken.setName("Penny");
+        chickenCoop.add(chicken);
+        Chicken actual = chickenCoop.getByName("Penny");
+        assertEquals(chicken, actual);
     }
 
     @Test
     public void test1removeChicken() {
-        //check that Chicken can be removed
+        ChickenCoop chickenCoop = new ChickenCoop();
+        Chicken chicken = new Chicken();
+        chickenCoop.add(chicken);
+        assertEquals(1, chickenCoop.getNumOfChickens());
+        chickenCoop.remove(chicken);
+        assertEquals(0, chickenCoop.getNumOfChickens());
     }
 
     @Test
     public void test2removeChicken() {
-        //check that Chicken can be removed by name
+        ChickenCoop chickenCoop = new ChickenCoop();
+        Chicken chicken = new Chicken();
+        chicken.setName("Penny");
+        chickenCoop.add(chicken);
+        assertEquals(1, chickenCoop.getNumOfChickens());
+        chickenCoop.remove("Penny");
+        assertEquals(0, chickenCoop.getNumOfChickens());
     }
 
     @Test
     public void test1getNumOfChickens() {
-        //testing empty chickenCoop, should return 0
+        ChickenCoop chickenCoop = new ChickenCoop();
+        assertEquals(0, chickenCoop.getNumOfChickens());
     }
 
     @Test
     public void test2getNumOfChickens() {
-        //testing that num of chickens
-        //returned changes as chickens are added to one coop
+        ChickenCoop chickenCoop = new ChickenCoop();
+        chickenCoop.add(new Chicken());
+        chickenCoop.add(new Chicken());
+        assertEquals(2, chickenCoop.getNumOfChickens());
     }
 
     @Test
     public void test3getNumOfChickens() {
-        //confirm that when this method is called
-        //it only returns the value for that specific coop
+        ChickenCoop coop1 = new ChickenCoop();
+        ChickenCoop coop2 = new ChickenCoop();
+        ChickenCoop coop3 = new ChickenCoop();
+        coop1.add(new Chicken());
+        coop2.add(new Chicken());
+        coop2.add(new Chicken());
+        coop3.add(new Chicken());
+        coop3.add(new Chicken());
+        coop3.add(new Chicken());
+        assertEquals(1, coop1.getNumOfChickens());
+        assertEquals(2, coop2.getNumOfChickens());
+        assertEquals(3, coop3.getNumOfChickens());
+    }
+
+    @Test
+    public void test1clearCoop() {
+        ChickenCoop coop = new ChickenCoop();
+        coop.add(new Chicken());
+        coop.add(new Chicken());
+        assertEquals(2, coop.getNumOfChickens());
+        coop.clearCoop();
+        assertEquals(0, coop.getNumOfChickens());
     }
 
 }

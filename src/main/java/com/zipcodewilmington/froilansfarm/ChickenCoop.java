@@ -6,9 +6,10 @@ public class ChickenCoop {
 
     ChickenCoop() {
     }
-//    public static void clear() {
-//        chickenCoop.clear();
-//    }
+
+    public void clearCoop() {
+        chickenCoop.clear();
+    }
 
     public int getNumOfChickens() {
         return chickenCoop.getNumberOfThings();
