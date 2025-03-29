@@ -24,8 +24,7 @@ class FarmHouseTest {
     @Test
     public void test1addPerson() {
         FarmHouse farmHouseTest = new FarmHouse();
-        Farmer person = new Farmer();
-        farmHouseTest.add(person);
+        farmHouseTest.add(new Farmer());
         assertEquals(1, farmHouseTest.getNumOfPeople());
     }
 
