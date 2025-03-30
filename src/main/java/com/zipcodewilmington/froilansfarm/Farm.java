@@ -9,7 +9,7 @@ public class Farm {
     ChickenCoop coop2;
     ChickenCoop coop3;
     ChickenCoop coop4;
-    Field field;
+    //Field field;
 
     Farm() {
         this.farmHouse = new FarmHouse();
@@ -20,7 +20,7 @@ public class Farm {
         this.coop2 = new ChickenCoop();
         this.coop3 = new ChickenCoop();
         this.coop4 = new ChickenCoop();
-        this.field = new Field();
+        //this.field = new Field();
     }
 
     /*
