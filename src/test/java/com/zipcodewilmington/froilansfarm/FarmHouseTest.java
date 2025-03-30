@@ -7,11 +7,6 @@ import java.util.Collection;
 
 class FarmHouseTest {
 
-    @BeforeEach
-    public void setUp() {
-        FarmHouse.clear();
-    }
-
     @Test
     public void testInstanceOf() {
         FarmHouse farmHouse = new FarmHouse();
@@ -122,7 +117,7 @@ class FarmHouseTest {
         Person person = new Pilot();
         farmHouseTest.add(person);
         assertEquals(1, farmHouseTest.getNumOfPeople());
-        farmHouseTest.clear();
+        farmHouseTest.clearFarmHouse();
         assertEquals(0, farmHouseTest.getNumOfPeople());
     }
 
