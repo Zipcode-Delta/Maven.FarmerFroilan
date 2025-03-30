@@ -6,29 +6,29 @@ import static org.junit.Assert.*;
 
 public class CropTest {
     @Test
-   void testCropName()  {
+    void testCropName() {
 
-      Crop crop = new Crop ("Tomato");
-assertEquals( "Tomato", crop.getName());
-   }
+        Crop crop = new Crop("Tomato");
+        assertEquals("Tomato", crop.getName());
+    }
 
 
-@Test
-void testHarvestCrop () {
- Crop crop = new Crop ();
- crop.setName("EarCorn");
-assertFalse(crop.harvest());
+    @Test
+    void testHarvestCrop() {
+        Crop crop = new Crop();
+        crop.setName("EarCorn");
+        assertFalse(crop.harvest());
 //crop.getName();
- //assertTrue(crop.harvest());
- }
+        //assertTrue(crop.harvest());
+    }
 
-@Test
+    @Test
     void addEdibleCrops() {
-        Crop crop = new Crop ("Tomato");
+        Crop crop = new Crop("Tomato");
         assertEquals(0, crop.getNumberOfEdibleCrops());
         crop.addEdibleCrops(5);
         assertEquals(5, crop.getNumberOfEdibleCrops());
 
-}
+    }
 
 }
