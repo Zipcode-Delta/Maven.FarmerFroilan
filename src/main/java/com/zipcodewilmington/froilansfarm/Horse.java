@@ -20,12 +20,14 @@ public class Horse extends Animal implements Rideable, NoiseMaker{
         this.beingRidden = true;
         return false;
     }
-public void dismount() {
+
+    public void dismount() {
         this.beingRidden = false;
-}
-public boolean isBeingRidden() {
+    }
+
+    public boolean isBeingRidden() {
         return beingRidden;
-}
+    }
    // @Override
     //    public void eat("Edible Food") {
     //        System.out.println("Horse is eating");

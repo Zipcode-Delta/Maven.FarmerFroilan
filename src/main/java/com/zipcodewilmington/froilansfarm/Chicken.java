@@ -1,14 +1,22 @@
 package com.zipcodewilmington.froilansfarm;
 
 public class Chicken extends Animal implements Produce {
+    private int numOfEdibleEggs = 4;
+    public Chicken() {
+
+    }
+
     @Override
     public String makeNoise() {
-        return "";
+        return "Cluck cluck";
     }
 
     @Override
     public int yield() {
-        return 0;
+        if (!hasBeenFertilized()){
+            return numOfEdibleEggs + 1;
+        }
+        return numOfEdibleEggs;
     }
 
     @Override

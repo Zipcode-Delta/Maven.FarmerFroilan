@@ -16,33 +16,37 @@ public class Crop implements Produce {
     public Crop() {
     }
 
-        public boolean harvest () {
-            if (hasBeenHarvested()) {
-                return this.harvested;
-            }
-            return  !this.harvested;
+    public boolean harvest() {
+        if (hasBeenHarvested()) {
+            return this.harvested;
         }
-
-    public boolean hasBeenHarvested() {
-        if (this.name.equalsIgnoreCase("EarCorn")){
-            return true;
-        }
-   return false;
+        return !this.harvested;
     }
 
-    public String getName () {
-            return name;
-        }
+    public void setNumberOfEdibleCrops(int number){
+        this.numberOfEdibleCrops += number;
+    }
 
-        public void setName (String name){
-            this.name = name;
+    public boolean hasBeenHarvested() {
+        if (this.name.equalsIgnoreCase("EarCorn")) {
+            return true;
         }
+        return false;
+    }
 
-        public int getNumberOfEdibleCrops () {
-            return numberOfEdibleCrops;
-            //if (NumberOfEdibleCrops>0)
-            // return edibleCrops;
-        }
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getNumberOfEdibleCrops() {
+        return numberOfEdibleCrops;
+        //if (NumberOfEdibleCrops>0)
+        // return edibleCrops;
+    }
 
     public int addEdibleCrops(int edible) {
 
@@ -51,20 +55,18 @@ public class Crop implements Produce {
         }
         return numberOfEdibleCrops;
     }
-        @Override
-        public int yield () {
-            return 0;
-        }
 
-        @Override
-        public boolean hasBeenFertilized () {
-            return true;
-        }
-
-
-    public void setNumberOfEdibleCrops(int number) {
-        this.numberOfEdibleCrops += number ;
+    @Override
+    public int yield() {
+        return 0;
     }
+
+    @Override
+    public boolean hasBeenFertilized() {
+        return true;
+    }
+
+
 }
 
 
