@@ -6,6 +6,31 @@ import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class HorseTest {
+    @Test
+    public void testMakeNoise() {
+        Horse horse = new Horse();
+
+        assertEquals("Neigh", horse.makeNoise(), "Horse should neigh");
+    }
+
+    @Test
+    public void testRide() {
+        Horse horse = new Horse();
+
+        assertFalse(horse.isBeingRidden());
+        horse.ride();
+        assertTrue(horse.isBeingRidden());
+
+    }
+
+    @Test
+    public void testDismountHorse() {
+        Horse horse = new Horse();
+        horse.ride();
+        assertTrue(horse.isBeingRidden());
+        horse.dismount();
+        assertFalse(horse.isBeingRidden());
+    }
 
     @Test
     public void testGetAndSetName(){
@@ -28,7 +53,7 @@ public class HorseTest {
     }
 
     @Test
-    public void testMakeNoise(){
+    public void testMakeNoise1(){
         Horse horse = new Horse();
 
         String expectedNoise = "Neigh";
@@ -37,7 +62,7 @@ public class HorseTest {
     }
 
     @Test
-    public void testRide(){
+    public void testRide1(){
         Horse horse = new Horse();
 
         //String expectedNoise = "Cluck cluck";

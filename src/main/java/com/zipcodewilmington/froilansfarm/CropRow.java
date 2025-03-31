@@ -14,7 +14,7 @@ public class CropRow {
         this.numOfCrops = numOfCrops;
     }
 
-    public void addCrops(int crops) {
-        this.numOfCrops += crops;
-    }
+    //public void addCrops(int crops) {
+        //this.numOfCrops += crops;
+    //}
 }
