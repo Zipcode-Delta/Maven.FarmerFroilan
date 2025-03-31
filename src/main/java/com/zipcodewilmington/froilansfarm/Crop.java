@@ -62,7 +62,10 @@ public class Crop implements Produce {
         }
 
 
+    public void setNumberOfEdibleCrops(int number) {
+        this.numberOfEdibleCrops += number ;
     }
+}
 
 
 //
