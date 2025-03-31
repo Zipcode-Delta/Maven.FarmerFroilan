@@ -25,9 +25,20 @@ public class Farm {
 
     /*
     will need methods for:
-    sundayRoutine();  schedule given
-    mondayRoutine();  schedule given
-    tuesdayRoutine();  schedule given
+    sundayRoutine() { schedule given
+    - morningRoutine();
+    - froilan set one cropRow to tomatoes
+    - froilan set one cropRow to corn
+    - froilan set one cropRow to yams
+    }
+    mondayRoutine() {  schedule given
+    - morningRoutine();
+    - froilanda uses CropDuster, all CropRows in Field are fertilized
+    }
+    tuesdayRoutine() {  schedule given
+    - morningRoutine();
+    - froilan uses Tractor, harvests each Crop in CropRow
+    }
     wednesdayRoutine();
     thursdayRoutine();
     fridayRoutine();
@@ -37,7 +48,7 @@ public class Farm {
         return however much EarCorn - amt to be fed > 0?
     }
     - rideHorse() {
-        return
+        return what??
     }
     - eatBreakfast() {
         subtract from totals for edible crops, return true if all values ?
