@@ -41,7 +41,7 @@ public class ChickenTest {
 
         //String expectedNoise = "Cluck cluck";
 
-        Assert.assertEquals(0, chicken.yield());
+        Assert.assertEquals(4, chicken.yield());
     }
 
     @Test
