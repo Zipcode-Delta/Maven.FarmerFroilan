@@ -17,13 +17,13 @@ public class FieldTest {
         row1 = new CropRow();
         row2 = new CropRow();
     }
-    @Test
-    void testAddCropRow() {
-        field.addCropRow(row1);
-        field.addCropRow(row2);
-        List<CropRow>cropRows = field.getCropRows();
-        assertEquals(2, cropRows.size());
-    }
+    //@Test
+    //void testAddCropRow() {
+       // field.addCropRow(row1);
+    //        field.addCropRow(row2);
+    //        List<CropRow>cropRows = field.getCropRows();
+    //        assertEquals(2, cropRows.size());
+    //    }
 
     @Test
     void testFieldStartsEmpty(){

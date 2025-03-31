@@ -14,8 +14,8 @@ public class Field {
     public void setCropRows(List<CropRow> cropRows) {
         this.cropRows = cropRows;
     }
-public void addCropRow( CropRow cropRow) {
-        this.cropRows.add(cropRow);
-}
+//public void addCropRow( CropRow cropRow) {
+        //this.cropRows.add(cropRow);
+//}
 
 }
