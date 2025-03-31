@@ -1,62 +1,74 @@
 package com.zipcodewilmington.froilansfarm;
 
 public class Farm {
-    FarmHouse farmHouse;
-    Stable stable1;
-    Stable stable2;
-    Stable stable3;
-    ChickenCoop coop1;
-    ChickenCoop coop2;
-    ChickenCoop coop3;
-    ChickenCoop coop4;
-    Field field;
+    FarmHouse farmHouse = new FarmHouse();
+    Stable stable1 = new Stable();
+    Stable stable2 = new Stable();
+    Stable stable3 = new Stable();
+    ChickenCoop coop1 = new ChickenCoop();
+    ChickenCoop coop2 = new ChickenCoop();
+    ChickenCoop coop3 = new ChickenCoop();
+    ChickenCoop coop4 = new ChickenCoop();
+    Field field = new Field();
 
-    Farm() {
-        this.farmHouse = new FarmHouse();
-        this.stable1 = new Stable();
-        this.stable2 = new Stable();
-        this.stable3 = new Stable();
-        this.coop1 = new ChickenCoop();
-        this.coop2 = new ChickenCoop();
-        this.coop3 = new ChickenCoop();
-        this.coop4 = new ChickenCoop();
-        this.field = new Field();
+    void runFarm() {
+
     }
 
+    public void sundayRoutine() {
+        morningRoutine();
+        //froilan plants crops, 3 different types in 3 different CropRows
+    }
+
+    public void mondayRoutine() {
+        morningRoutine();
+        //froilanda uses the CropDuster to fertilize the CropRows in the Field
+    }
+
+    public void tuesdayRoutine() {
+        morningRoutine();
+        //froilan uses the Tractor to harvest the crops
+    }
+
+    public void wednesdayRoutine() {
+        morningRoutine();
+        //additional routines TBD
+    }
+
+    public void thursdayRoutine() {
+        morningRoutine();
+        //additional routines TBD
+    }
+
+    public void fridayRoutine() {
+        morningRoutine();
+        //additional routines TBD
+    }
+
+    public void saturdayRoutine() {
+        morningRoutine();
+        //additional routines TBD
+    }
+
+    public void morningRoutine() {
+//        feedHorse();
+//        rideHorse();
+//        eatBreakfast();
+        //do we want to harvest chicken eggs daily? every other day?
+    }
+
+    public boolean feedHorse() {
+        //return however much EarCorn - amt to be fed > 0?
+        return false;
+    }
+
+    //- rideHorse() {
+    //        return what??
+    // }
+    //- eatBreakfast() {
+    //    subtract from totals for edible crops, return true if all values ?
+    // }
     /*
-    will need methods for:
-    sundayRoutine() { schedule given
-    - morningRoutine();
-    - froilan set one cropRow to tomatoes
-    - froilan set one cropRow to corn
-    - froilan set one cropRow to yams
-    }
-    mondayRoutine() {  schedule given
-    - morningRoutine();
-    - froilanda uses CropDuster, all CropRows in Field are fertilized
-    }
-    tuesdayRoutine() {  schedule given
-    - morningRoutine();
-    - froilan uses Tractor, harvests each Crop in CropRow
-    }
-    wednesdayRoutine();
-    thursdayRoutine();
-    fridayRoutine();
-    saturdayRoutine();
-    morningRoutine();  used every morning, regardless of day
-    - feedHorse() {
-        return however much EarCorn - amt to be fed > 0?
-    }
-    - rideHorse() {
-        return what??
-    }
-    - eatBreakfast() {
-        subtract from totals for edible crops, return true if all values ?
-    }
-    feedHorse();  part of morning routine
-    rideHorse();  part of morning routine
-    eatBreakfast();  part of morning routine
-
     should we have a method that sets up the farm,
     creates the Person, Horse, and Chicken objects and adds them to the shelters?
     are these returning void? should feedHorse() return the new amount of EarCorn left?
