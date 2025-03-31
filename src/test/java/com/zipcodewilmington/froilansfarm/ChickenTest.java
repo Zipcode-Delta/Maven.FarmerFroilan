@@ -45,6 +45,16 @@ public class ChickenTest {
     }
 
     @Test
+    public void testYield1(){
+        Chicken chicken = new Chicken();
+
+
+        //String expectedNoise = "Cluck cluck";
+
+        Assert.assertEquals(4, chicken.yield());
+    }
+
+    @Test
     public void testHasBeenFertilized(){
         Chicken chicken = new Chicken();
 

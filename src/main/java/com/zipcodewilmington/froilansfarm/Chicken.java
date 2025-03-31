@@ -2,6 +2,7 @@ package com.zipcodewilmington.froilansfarm;
 
 public class Chicken extends Animal implements Produce {
     private int numOfEdibleEggs = 4;
+
     public Chicken() {
 
     }
