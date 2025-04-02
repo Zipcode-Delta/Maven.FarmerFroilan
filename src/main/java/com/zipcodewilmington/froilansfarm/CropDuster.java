@@ -18,6 +18,6 @@ public class CropDuster extends FarmVehicle implements AirCraft{
     }
 
     public int fertilizeCrops(CropRow cropRow){
-        return 0;
+        return cropRow.getNumOfCrops();
     }
 }

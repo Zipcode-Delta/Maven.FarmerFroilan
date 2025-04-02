@@ -8,4 +8,6 @@ public class TomatoPlant extends Crop{
     public TomatoPlant() {
         this.setNumberOfEdibleCrops(30);
     }
+
+
 }

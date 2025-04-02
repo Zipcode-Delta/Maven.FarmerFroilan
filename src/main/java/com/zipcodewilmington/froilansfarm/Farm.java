@@ -51,21 +51,39 @@ public class Farm {
     }
 
     public void morningRoutine() {
-//        feedHorse();
-//        rideHorse();
-//        eatBreakfast();
+        //rideHorse();
+        feedHorse();
+        eatBreakfast();
         //do we want to harvest chicken eggs daily? every other day?
     }
 
     public boolean feedHorse() {
+        Horse horse = new Horse();
+        Crop corn = new CornStalk();
+        horse.eat(corn, 3);
+
         //return however much EarCorn - amt to be fed > 0?
-        return false;
+        // number of corn set in horse eat() method?? does that need to be moved?
+
+        return true;
     }
 
-    //- rideHorse() {
+    public boolean rideHorse(Horse horse) {
+        horse.ride();
+        return true;
+    }
     //        return what??
     // }
-    //- eatBreakfast() {
+    public String eatBreakfast() {
+        Person farmer = new Farmer();
+        Crop earCorn = new Crop();
+        farmer.eat(earCorn, 1);
+        Crop tomato = new Crop();
+        farmer.eat(tomato, 2);
+        Chicken chicken = new Chicken();
+
+        return farmer.getName() + "Has eaten breakfast";
+    }
     //    subtract from totals for edible crops, return true if all values ?
     // }
     /*

@@ -9,4 +9,6 @@ public class CornStalk extends Crop{
     public CornStalk() {
         this.setNumberOfEdibleCrops(235);
     }
+
+
 }

@@ -53,6 +53,22 @@ public class CropDusterTest {
         Assert.assertEquals(expectedNoise, actualNoise);
     }
 
+    @Test
+    public void TestFertilize(){
+        //Given
+        CropDuster cropDuster = new CropDuster();
+        CropRow cropRow = new CropRow();
+        Crop earCorn = new CornStalk();
+        cropRow.setNumOfCrops(20);
+        String expectedNoise = "Fertilizing...";
+
+        //When
+        int expectedNumberOfEarCorn = cropDuster.fertilizeCrops(cropRow);
+
+        //Then
+        Assert.assertEquals(expectedNumberOfEarCorn, 20);
+    }
+
 
 
 
