@@ -46,4 +46,8 @@ public class Shelter<LivingThings extends Eater> {
         return null;
     }
 
+    public LivingThings getByIndex(int index) {
+        return shelter.get(index);
+    }
+
 }

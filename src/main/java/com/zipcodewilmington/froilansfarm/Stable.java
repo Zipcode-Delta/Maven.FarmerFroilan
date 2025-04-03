@@ -34,4 +34,8 @@ public class Stable extends Shelter {
     public Horse getByName(String name) {
         return stable.getByName(name);
     }
+
+    public Horse getByIndex(int index) {
+        return stable.getByIndex(index);
+    }
 }

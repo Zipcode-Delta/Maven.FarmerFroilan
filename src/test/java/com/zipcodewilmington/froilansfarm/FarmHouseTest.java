@@ -45,6 +45,24 @@ class FarmHouseTest {
     }
 
     @Test
+    public void test1getPerson() {
+        FarmHouse farmHouseTest = new FarmHouse();
+        Person person1 = new Farmer();
+        farmHouseTest.add(person1);
+        assertEquals(person1, farmHouseTest.getPerson(person1));
+    }
+
+    @Test
+    public void test2getPerson() {
+        FarmHouse farmHouseTest = new FarmHouse();
+        Person farmer = new Farmer();
+        Person pilot = new Pilot();
+        farmHouseTest.add(farmer); farmHouseTest.add(pilot);
+        assertEquals(farmer, farmHouseTest.getPerson(farmer));
+        assertEquals(pilot, farmHouseTest.getPerson(pilot));
+    }
+
+    @Test
     public void test1getNumOfPeople() {
         FarmHouse farmHouseTest = new FarmHouse();
         int expected = 0;
