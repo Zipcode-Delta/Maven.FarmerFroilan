@@ -3,6 +3,17 @@ package com.zipcodewilmington.froilansfarm;
 public class Pilot extends Person {
 
     @Override
+    public int eat() {
+        Crop tomato = new TomatoPlant();
+        Crop earCorn = new CornStalk();
+        Chicken edibleEggs = new Chicken();
+        tomato.setNumberOfEdibleCrops(tomato.getNumberOfEdibleCrops()-1);
+        earCorn.setNumberOfEdibleCrops(earCorn.getNumberOfEdibleCrops()-2);
+        edibleEggs.setNumOfEdibleEggs(edibleEggs.getNumOfEdibleEggs()-2);
+        return super.eat();
+    }
+
+    @Override
     public String makeNoise() {
         return "";
     }

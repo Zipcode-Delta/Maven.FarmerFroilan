@@ -10,9 +10,12 @@ public abstract class Eater implements NoiseMaker{
     public void setName(String name) {
         this.name = name;
     }
-    public int eat(Crop crop, Integer numOfEdiblesCropsEaten){
-        return crop.getNumberOfEdibleCrops();
+    public int eat(){
+
+        return 0;
     }
+
+
 
     //People need to eat eggs.
 //    public int eat(Chicken edibleEggs, Integer numOfEdiblesCropsEaten){

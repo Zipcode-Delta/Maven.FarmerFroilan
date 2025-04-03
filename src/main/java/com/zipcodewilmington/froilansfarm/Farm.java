@@ -60,7 +60,7 @@ public class Farm {
     public boolean feedHorse() {
         Horse horse = new Horse();
         Crop corn = new CornStalk();
-        horse.eat(corn, 3);
+        horse.eat();
 
         //return however much EarCorn - amt to be fed > 0?
         // number of corn set in horse eat() method?? does that need to be moved?
@@ -76,12 +76,9 @@ public class Farm {
     // }
     public String eatBreakfast() {
         Person farmer = new Farmer();
-        Crop earCorn = new Crop();
-        farmer.eat(earCorn, 1);
-        Crop tomato = new Crop();
-        farmer.eat(tomato, 2);
-        Chicken chicken = new Chicken();
-
+        Person pilot = new Pilot();
+        farmer.eat();
+        pilot.eat();
         return farmer.getName() + "Has eaten breakfast";
     }
     //    subtract from totals for edible crops, return true if all values ?

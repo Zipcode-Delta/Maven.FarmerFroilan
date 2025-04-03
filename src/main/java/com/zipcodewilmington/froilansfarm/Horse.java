@@ -9,11 +9,6 @@ public class Horse extends Animal implements Rideable, NoiseMaker{
         //this.foodEaten = new ArrayList<>();
     }
 
-    @Override
-    public int eat(Crop crop, Integer num) {
-        crop.setNumberOfEdibleCrops(crop.getNumberOfEdibleCrops()-num);
-       return crop.getNumberOfEdibleCrops();
-    }
 
     @Override
     public String makeNoise() {
@@ -33,7 +28,17 @@ public class Horse extends Animal implements Rideable, NoiseMaker{
     public boolean isBeingRidden() {
         return this.beingRidden;
     }
-   // @Override
+
+    @Override
+    public int eat() {
+        CornStalk earCorn = new CornStalk();
+        earCorn.setNumberOfEdibleCrops(earCorn.getNumberOfEdibleCrops()-30);
+        return 0;
+    }
+
+
+
+    // @Override
     //    public void eat("Edible Food") {
     //        System.out.println("Horse is eating");
     //    }

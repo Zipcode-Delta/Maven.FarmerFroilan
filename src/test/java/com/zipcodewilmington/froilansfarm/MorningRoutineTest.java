@@ -8,7 +8,7 @@ public class MorningRoutineTest {
     public void FeedHorseTest() {
         Horse horse = new Horse();
         CornStalk earCorn = new CornStalk();
-        horse.eat(earCorn, 3);
+        horse.eat();
 
         int expectedNumberOfEarCorn = 467;
 
@@ -19,7 +19,7 @@ public class MorningRoutineTest {
     public void FeedHorseTest2() {
         Horse horse = new Horse();
         CornStalk earCorn = new CornStalk();
-        horse.eat(earCorn, 10);
+        horse.eat();
 
         int expectedNumberOfEarCorn = 460;
 
@@ -31,13 +31,16 @@ public class MorningRoutineTest {
         Person farmer = new Farmer();
         Crop earCorn = new CornStalk();
         Crop tomato = new TomatoPlant();
-        farmer.eat(tomato, 2);
-        farmer.eat(earCorn, 1);
+        Chicken edibleEggs = new Chicken();
+        farmer.eat();
+
 
         int expectedNumberOfEarCorn = 235;
         int expectedNumberOfTomato = 30;
+        int expectedNumberOfEdibleEggs = 20;
 
         Assert.assertEquals(expectedNumberOfEarCorn, earCorn.getNumberOfEdibleCrops());
         Assert.assertEquals(expectedNumberOfTomato, tomato.getNumberOfEdibleCrops());
+        Assert.assertEquals(expectedNumberOfEdibleEggs, edibleEggs.getNumOfEdibleEggs());
     }
 }

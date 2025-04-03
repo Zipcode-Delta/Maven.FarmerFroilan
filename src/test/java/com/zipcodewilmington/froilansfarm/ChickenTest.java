@@ -34,7 +34,7 @@ public class ChickenTest {
 
         Assert.assertEquals(expectedNoise, chicken.makeNoise());
     }
-
+//yield will fail because it is riding on a random generator.
     @Test
     public void testYield(){
         Chicken chicken = new Chicken();
@@ -47,9 +47,6 @@ public class ChickenTest {
     @Test
     public void testYield1(){
         Chicken chicken = new Chicken();
-
-
-        //String expectedNoise = "Cluck cluck";
 
         Assert.assertEquals(4, chicken.yield());
     }
