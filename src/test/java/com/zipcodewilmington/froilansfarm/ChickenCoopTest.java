@@ -48,6 +48,24 @@ class ChickenCoopTest {
     }
 
     @Test
+    public void test1getChicken() {
+        ChickenCoop coop = new ChickenCoop();
+        Chicken chicken = new Chicken();
+        coop.add(chicken);
+        assertEquals(chicken, coop.getChicken(chicken));
+    }
+
+    @Test
+    public void test2getChicken() {
+        ChickenCoop coop = new ChickenCoop();
+        Chicken chicken = new Chicken();
+        Chicken chicken2 = new Chicken();
+        coop.add(chicken); coop.add(chicken2);
+        assertEquals(chicken, coop.getChicken(chicken));
+        assertEquals(chicken2, coop.getChicken(chicken2));
+    }
+
+    @Test
     public void test1getChickenByName() {
         ChickenCoop chickenCoop = new ChickenCoop();
         assertNull(chickenCoop.getByName("Penny"));
