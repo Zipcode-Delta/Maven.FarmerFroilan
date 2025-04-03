@@ -80,6 +80,9 @@ public class Farm {
     }
 
     public void morningRoutine() {
+        for (int i = 0; i < stable1.getNumOfHorses(); i++) {
+            //rideHorse(stable1.getHorse())
+         }
         //rideHorse(horse);
         feedHorse();
         eatBreakfast();
@@ -97,10 +100,10 @@ public class Farm {
         return true;
     }
 
-    public boolean rideHorse() {
-        for (int i = 0; i < stable1.getNumOfHorses(); i++) {
-
-        }
+    public boolean rideHorse(Horse horse) {
+       // for (int i = 0; i < stable1.getNumOfHorses(); i++) {
+            horse.ride();
+       // }
         return true;
     }
     //        return what??
