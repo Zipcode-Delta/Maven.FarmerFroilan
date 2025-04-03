@@ -1,6 +1,6 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class Stable {
+public class Stable extends Shelter {
     private Shelter<Horse> stable = new Shelter<>();
     //does this need to be static?
 

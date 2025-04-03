@@ -97,9 +97,10 @@ public class Farm {
         return true;
     }
 
-    public boolean rideHorse(Horse horse) {
+    public boolean rideHorse() {
+        for (int i = 0; i < stable1.getNumOfHorses(); i++) {
 
-        horse.ride();
+        }
         return true;
     }
     //        return what??
