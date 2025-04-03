@@ -27,6 +27,10 @@ public class Stable extends Shelter {
         stable.removeByName(name);
     }
 
+    public Horse getHorse(Horse horse) {
+        return stable.getLivingThing(horse);
+    }
+
     public Horse getByName(String name) {
         return stable.getByName(name);
     }
