@@ -17,13 +17,14 @@ public class Pilot extends Person {
 
     @Override
     public String makeNoise() {
-        return "";
+        return "dchu dchu dchu dchu";
     }
 
     @Override
     public String mount(String name) {
         System.out.println(name + " Mounted CropDuster");
         cropDuster.ride();
+        System.out.println(cropDuster.makeNoise());
         cropDuster.fly();
         cropDuster.fertilizeCrops(cropRow);
         if (this.getName().equals("froilinda")) {
@@ -33,7 +34,8 @@ public class Pilot extends Person {
     }
 
     @Override
-    public String dismount() {
+    public String dismount(String name) {
+        System.out.println(name + " Unmounted CropDuster");
         if (this.getName().equals("Pilot")){
             return "Dismounting cropDuster";
         }

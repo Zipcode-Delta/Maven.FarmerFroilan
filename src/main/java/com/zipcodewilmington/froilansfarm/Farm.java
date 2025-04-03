@@ -12,11 +12,11 @@ public class Farm {
     Field field = new Field();
     Farmer froilan = new Farmer();
     Pilot froilanda = new Pilot();
-    Horse horse1 = new Horse(); Horse horse2 = new Horse();
-    Horse horse3 = new Horse(); Horse horse4 = new Horse();
-    Horse horse5 = new Horse(); Horse horse6 = new Horse();
-    Horse horse7 = new Horse(); Horse horse8 = new Horse();
-    Horse horse9 = new Horse(); Horse horse10 = new Horse();
+    Horse horse1 = new Horse("horse1"); Horse horse2 = new Horse("horse2");
+    Horse horse3 = new Horse("horse3"); Horse horse4 = new Horse("horse4");
+    Horse horse5 = new Horse("horse5"); Horse horse6 = new Horse("horse6");
+    Horse horse7 = new Horse("horse7"); Horse horse8 = new Horse("horse8");
+    Horse horse9 = new Horse("horse9"); Horse horse10 = new Horse("horse10");
     Chicken chicken1 = new Chicken(); Chicken chicken2 = new Chicken();
     Chicken chicken3 = new Chicken(); Chicken chicken4 = new Chicken();
     Chicken chicken5 = new Chicken(); Chicken chicken6 = new Chicken();
@@ -25,11 +25,9 @@ public class Farm {
     Chicken chicken11 = new Chicken(); Chicken chicken12 = new Chicken();
     Chicken chicken13 = new Chicken(); Chicken chicken14 = new Chicken();
     Chicken chicken15 = new Chicken();
-    CropRow rowOfEarCorn = new CropRow();
-    CropRow rowOfTomato = new CropRow();
-    CropRow rowOfYams1 = new CropRow();
-    CropRow rowOfYams2 = new CropRow();
-    CropRow rowOfYams3 = new CropRow();
+
+
+
 
 
     public void setUp() {
@@ -73,7 +71,9 @@ public class Farm {
         morningRoutine();
         //froilanda uses the CropDuster to fertilize the CropRows in the Field
         froilanda.mount(froilanda.getName());
+
         //write out the effects of mounting cropduster and then dismounts
+        froilanda.dismount(froilanda.getName());
     }
 
     public void tuesdayRoutine() {
@@ -82,6 +82,7 @@ public class Farm {
         //froilan uses the Tractor to harvest the crops
         froilan.mount(froilan.getName());
         //Continue process that happens when tractor is mounted.
+        froilan.dismount(froilan.getName());
     }
 
     public void wednesdayRoutine() {
@@ -120,15 +121,15 @@ public class Farm {
         int numberOfCornFed = 0;
         for (int i = 0; i < stable1.getNumOfHorses(); i++) {
             stable1.getByIndex(i).eat();
-            updateSpectator(stable1.getByIndex(i).getName() + "has been fed 3 ears of corn");
+            updateSpectator(stable1.getByIndex(i).getName() + " has been fed 3 ears of corn");
         }
         for (int i = 0; i < stable2.getNumOfHorses(); i++) {
             stable1.getByIndex(i).eat();
-            updateSpectator(stable1.getByIndex(i).getName() + "has been fed 3 ears of corn");
+            updateSpectator(stable1.getByIndex(i).getName() + " has been fed 3 ears of corn");
         }
         for (int i = 0; i < stable3.getNumOfHorses(); i++) {
             stable1.getByIndex(i).eat();
-            updateSpectator(stable1.getByIndex(i).getName() + "has been fed 3 ears of corn");
+            updateSpectator(stable1.getByIndex(i).getName() + " has been fed 3 ears of corn");
         }
         //return however much EarCorn - amt to be fed > 0?
         // number of corn set in horse eat() method?? does that need to be moved?

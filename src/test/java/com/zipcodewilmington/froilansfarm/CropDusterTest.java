@@ -58,15 +58,13 @@ public class CropDusterTest {
         //Given
         CropDuster cropDuster = new CropDuster();
         CropRow cropRow = new CropRow();
-        Crop earCorn = new CornStalk();
-        cropRow.setNumOfCrops(20);
-        String expectedNoise = "Fertilizing...";
+        String expectedString = "Fertilizing crop rows...";
 
         //When
-        int expectedNumberOfEarCorn = cropDuster.fertilizeCrops(cropRow);
+        String actrualString = cropDuster.fertilizeCrops(cropRow);
 
         //Then
-        Assert.assertEquals(expectedNumberOfEarCorn, 20);
+        Assert.assertEquals(expectedString, actrualString);
     }
 
 

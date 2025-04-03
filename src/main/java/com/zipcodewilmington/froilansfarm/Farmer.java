@@ -21,6 +21,8 @@ public class Farmer extends Person implements Botanist{
 
     @Override
     public String plant() {
+        Farm farm = new Farm();
+        farm.updateSpectator("Farmer Plants 3 rows of crops ");
         return "";
     }
 
@@ -36,7 +38,7 @@ public class Farmer extends Person implements Botanist{
     }
 
     @Override
-    public String dismount() {
+    public String dismount(String name) {
         if (this.getName().equals("Farmer")){
             return "Dismounting tractor";
         }

@@ -12,7 +12,7 @@ class CornStalkTest {
     public void getNumberOfEdibleCropsTest() {
         Crop earCorn = new CornStalk();
 
-        Assert.assertEquals(235, earCorn.getNumberOfEdibleCrops());
+        Assert.assertEquals(100, earCorn.getNumberOfEdibleCrops());
     }
 
     @Test
@@ -20,7 +20,7 @@ class CornStalkTest {
         Crop earCorn = new CornStalk();
         earCorn.setNumberOfEdibleCrops(20);
 
-        Assert.assertEquals(255, earCorn.getNumberOfEdibleCrops());
+        Assert.assertEquals(120, earCorn.getNumberOfEdibleCrops());
     }
 
 

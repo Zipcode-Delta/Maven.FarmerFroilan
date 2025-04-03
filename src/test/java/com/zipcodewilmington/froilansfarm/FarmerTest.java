@@ -53,7 +53,7 @@ public class FarmerTest {
 
         String expected = "Mounting tractor";
 
-        Assert.assertNotEquals(expected, farmer.dismount());
+        Assert.assertNotEquals(expected, farmer.dismount("Pilot"));
     }
 
     @Test
@@ -63,7 +63,7 @@ public class FarmerTest {
 
         String expected = "Dismounting tractor";
 
-        Assert.assertEquals(expected, farmer.dismount());
+        Assert.assertEquals(expected, farmer.dismount("Pilot"));
     }
 
     @Test
@@ -73,6 +73,6 @@ public class FarmerTest {
 
         String expected = "Not allowed to mount tractor";
 
-        Assert.assertNotEquals(expected, farmer.dismount());
+        Assert.assertNotEquals(expected, farmer.dismount("Farmer"));
     }
 }

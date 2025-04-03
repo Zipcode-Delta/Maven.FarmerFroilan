@@ -53,7 +53,7 @@ public class PilotTest {
 
         String expected = "Dismounting cropDuster";
 
-        Assert.assertEquals(expected, pilot.dismount());
+        Assert.assertEquals(expected, pilot.dismount("Farmer"));
     }
 
     @Test
@@ -63,7 +63,7 @@ public class PilotTest {
 
         String expected = "Mounting tractor";
 
-        Assert.assertNotEquals(expected, pilot.dismount());
+        Assert.assertNotEquals(expected, pilot.dismount("Farmer"));
     }
 
     @Test
@@ -73,7 +73,7 @@ public class PilotTest {
 
         String expected = "Not allowed to mount tractor";
 
-        Assert.assertNotEquals(expected, pilot.dismount());
+        Assert.assertNotEquals(expected, pilot.dismount("Farmer"));
     }
 
 }

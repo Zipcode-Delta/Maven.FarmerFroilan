@@ -39,7 +39,7 @@ public class Chicken extends Animal implements Produce {
     @Override
     public boolean hasBeenFertilized() {
         int rand = (int) Math.ceil(Math.random()*2);
-
+        System.out.println(rand);
         return rand == 1;
 
     }

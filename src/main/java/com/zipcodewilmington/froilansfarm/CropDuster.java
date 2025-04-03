@@ -10,6 +10,7 @@ public class CropDuster extends FarmVehicle implements AirCraft{
 
     @Override
     public String fly() {
+        System.out.println("Fertilizing...");
         return "Fertilizing...";
     }
 
@@ -18,7 +19,8 @@ public class CropDuster extends FarmVehicle implements AirCraft{
         return true;
     }
 
-    public int fertilizeCrops(CropRow cropRow){
-        return 5;
+    public String fertilizeCrops(CropRow cropRow){
+
+        return "Fertilizing crop rows...";
     }
 }
