@@ -28,6 +28,15 @@ public class Shelter<LivingThings extends Eater> {
         shelter.remove(getByName(name));
     }
 
+    public LivingThings getLivingThing(LivingThings type) {
+        for (LivingThings obj : shelter) {
+            if (obj == type) {
+                return obj;
+            }
+        }
+        return null;
+    }
+
     public LivingThings getByName(String name) {
         for (LivingThings obj : shelter) {
             if (obj.getName().equals(name)) {
