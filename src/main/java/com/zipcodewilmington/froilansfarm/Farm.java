@@ -81,30 +81,44 @@ public class Farm {
     }
 
     public void morningRoutine() {
-        for (int i = 0; i < stable1.getNumOfHorses(); i++) {
-            //rideHorse(stable1.getHorse())
-         }
-        //rideHorse(horse);
+        rideHorse();
         feedHorse();
         eatBreakfast();
         //do we want to harvest chicken eggs daily? every other day?
     }
 
     public boolean feedHorse() {
-        Horse horse = new Horse();
-        Crop corn = new CornStalk();
-        horse.eat();
+        horse1.eat();
+        horse2.eat();
+        horse3.eat();
+        horse4.eat();
+        horse5.eat();
+        horse6.eat();
+        horse7.eat();
+        horse8.eat();
+        horse9.eat();
+        horse10.eat();
 
+        for (int i = 0; i < stable1.getNumOfHorses(); i++) {
+            //stable1;
+        }
         //return however much EarCorn - amt to be fed > 0?
         // number of corn set in horse eat() method?? does that need to be moved?
 
         return true;
     }
 
-    public boolean rideHorse(Horse horse) {
-       // for (int i = 0; i < stable1.getNumOfHorses(); i++) {
-            horse.ride();
-       // }
+    public boolean rideHorse() {
+        horse1.ride();
+        horse2.ride();
+        horse3.ride();
+        horse4.ride();
+        horse5.ride();
+        horse6.ride();
+        horse7.ride();
+        horse8.ride();
+        horse9.ride();
+        horse10.ride();
         return true;
     }
     //        return what??
