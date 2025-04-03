@@ -9,6 +9,11 @@ public class Horse extends Animal implements Rideable, NoiseMaker{
         //this.foodEaten = new ArrayList<>();
     }
 
+    public Horse(String name) {
+        this.beingRidden = false;
+        this.setName(name);
+    }
+
 
     @Override
     public String makeNoise() {
