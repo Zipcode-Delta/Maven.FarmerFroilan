@@ -31,9 +31,9 @@ public class PilotTest {
         Person pilot = new Pilot();
         pilot.setName("Pilot");
 
-        String expected = "Mounting Crop Duster";
+        String expected = "Unable to mount Crop Duster";
 
-        Assert.assertEquals(expected, pilot.mount());
+        Assert.assertEquals(expected, pilot.mount("Pilot"));
     }
 
     @Test
@@ -43,7 +43,7 @@ public class PilotTest {
 
         String expected = "Mounting tractor";
 
-        Assert.assertNotEquals(expected, pilot.mount());
+        Assert.assertNotEquals(expected, pilot.mount("Farmer"));
     }
 
     @Test

@@ -1,6 +1,8 @@
 package com.zipcodewilmington.froilansfarm;
 
 public class Pilot extends Person {
+    CropDuster cropDuster = new CropDuster();
+    CropRow cropRow = new CropRow();
 
     @Override
     public int eat() {
@@ -19,8 +21,12 @@ public class Pilot extends Person {
     }
 
     @Override
-    public String mount() {
-        if (this.getName().equals("Pilot")) {
+    public String mount(String name) {
+        System.out.println(name + " Mounted CropDuster");
+        cropDuster.ride();
+        cropDuster.fly();
+        cropDuster.fertilizeCrops(cropRow);
+        if (this.getName().equals("froilinda")) {
             return "Mounting Crop Duster";
         }
         return "Unable to mount Crop Duster";

@@ -25,6 +25,11 @@ public class Farm {
     Chicken chicken11 = new Chicken(); Chicken chicken12 = new Chicken();
     Chicken chicken13 = new Chicken(); Chicken chicken14 = new Chicken();
     Chicken chicken15 = new Chicken();
+    CropRow rowOfEarCorn = new CropRow();
+    CropRow rowOfTomato = new CropRow();
+    CropRow rowOfYams1 = new CropRow();
+    CropRow rowOfYams2 = new CropRow();
+    CropRow rowOfYams3 = new CropRow();
 
 
     public void setUp() {
@@ -39,48 +44,75 @@ public class Farm {
         coop2.add(chicken5); coop2.add(chicken6); coop2.add(chicken7); coop2.add(chicken8);
         coop3.add(chicken9); coop3.add(chicken10); coop3.add(chicken11); coop3.add(chicken12);
         coop4.add(chicken13); coop4.add(chicken14); coop4.add(chicken15);
+        field.addToCropRows(rowOfEarCorn);field.addToCropRows(rowOfTomato);field.addToCropRows(rowOfYams1);
+        field.addToCropRows(rowOfYams2);field.addToCropRows(rowOfYams3);
+
     }
 
-    void runFarm() {
+    public void runFarm() {
+        setUp();
+        sundayRoutine();
+        mondayRoutine();
+        tuesdayRoutine();
+        wednesdayRoutine();
+        thursdayRoutine();
+        fridayRoutine();
+        saturdayRoutine();
+    }
 
+    public void updateSpectator(String string) {
+        System.out.println(string);
     }
 
     public void sundayRoutine() {
+        updateSpectator("Today is Sunday");
         morningRoutine();
         //froilan plants crops, 3 different types in 3 different CropRows
+        froilan.plant();
     }
 
     public void mondayRoutine() {
+        updateSpectator("Today is Monday");
         morningRoutine();
         //froilanda uses the CropDuster to fertilize the CropRows in the Field
+        froilanda.mount(froilanda.getName());
+        //write out the effects of mounting cropduster and then dismounts
     }
 
     public void tuesdayRoutine() {
+        updateSpectator("Today is Tuesday");
         morningRoutine();
         //froilan uses the Tractor to harvest the crops
+        froilan.mount(froilan.getName());
+        //Continue process that happens when tractor is mounted.
     }
 
     public void wednesdayRoutine() {
+        updateSpectator("Today is Wednesday");
         morningRoutine();
         //additional routines TBD
     }
 
     public void thursdayRoutine() {
+        updateSpectator("Today is Thursday");
         morningRoutine();
         //additional routines TBD
     }
 
     public void fridayRoutine() {
+        updateSpectator("Today is Friday");
         morningRoutine();
         //additional routines TBD
     }
 
     public void saturdayRoutine() {
+        updateSpectator("Today is Saturday");
         morningRoutine();
         //additional routines TBD
     }
 
     public void morningRoutine() {
+        updateSpectator(froilan.getName() +" and "+ froilanda.getName() + " ride all 10 horses");
         rideHorse();
         feedHorse();
         eatBreakfast();
@@ -88,47 +120,49 @@ public class Farm {
     }
 
     public boolean feedHorse() {
-        horse1.eat();
-        horse2.eat();
-        horse3.eat();
-        horse4.eat();
-        horse5.eat();
-        horse6.eat();
-        horse7.eat();
-        horse8.eat();
-        horse9.eat();
-        horse10.eat();
-
+        int numberOfCornFed = 0;
         for (int i = 0; i < stable1.getNumOfHorses(); i++) {
-            //stable1;
+            stable1.getByIndex(i).eat();
+            updateSpectator(stable1.getByIndex(i).toString() + "has been fed 3 ears of corn");
+        }
+        for (int i = 0; i < stable2.getNumOfHorses(); i++) {
+            stable1.getByIndex(i).eat();
+            updateSpectator(stable1.getByIndex(i).toString() + "has been fed 3 ears of corn");
+        }
+        for (int i = 0; i < stable3.getNumOfHorses(); i++) {
+            stable1.getByIndex(i).eat();
+            updateSpectator(stable1.getByIndex(i).toString() + "has been fed 3 ears of corn");
         }
         //return however much EarCorn - amt to be fed > 0?
         // number of corn set in horse eat() method?? does that need to be moved?
-
+        updateSpectator("All horses were fed a total of "+ numberOfCornFed +".");
         return true;
     }
 
     public boolean rideHorse() {
-        horse1.ride();
-        horse2.ride();
-        horse3.ride();
-        horse4.ride();
-        horse5.ride();
-        horse6.ride();
-        horse7.ride();
-        horse8.ride();
-        horse9.ride();
-        horse10.ride();
+        for (int i = 0; i < stable1.getNumOfHorses(); i++) {
+            stable1.getByIndex(i).ride();
+            stable1.getByIndex(i).isBeingRidden();
+            updateSpectator(stable1.getByIndex(i).toString()+ " ridden");
+        }
+        for (int i = 0; i < stable2.getNumOfHorses(); i++) {
+            stable1.getByIndex(i).ride();
+            stable1.getByIndex(i).isBeingRidden();
+            updateSpectator(stable1.getByIndex(i).toString()+ " ridden");
+        }
+        for (int i = 0; i < stable3.getNumOfHorses(); i++) {
+            stable1.getByIndex(i).ride();
+            stable1.getByIndex(i).isBeingRidden();
+            updateSpectator(stable1.getByIndex(i).toString()+ " ridden");
+        }
         return true;
     }
     //        return what??
     // }
     public String eatBreakfast() {
-        Person farmer = new Farmer();
-        Person pilot = new Pilot();
-        farmer.eat();
-        pilot.eat();
-        return farmer.getName() + "Has eaten breakfast";
+        froilan.eat();
+        froilanda.eat();
+        return "Has eaten breakfast";
     }
     //    subtract from totals for edible crops, return true if all values ?
     // }

@@ -1,11 +1,14 @@
 package com.zipcodewilmington.froilansfarm;
 
+import java.util.Random;
+
 public class Crop implements Produce {
 
 
     private String name;
     private int numberOfEdibleCrops;
     public boolean harvested;
+
 
     public Crop(String name) {
         this.name = name;
@@ -48,10 +51,9 @@ public class Crop implements Produce {
         // return edibleCrops;
     }
 
-    public int addEdibleCrops(int edible) {
-
-        if (edible > 0) {
-            numberOfEdibleCrops += edible;
+    public int addEdibleCrops(int edibleCrops) {
+        if (edibleCrops > 0) {
+            numberOfEdibleCrops += edibleCrops;
         }
         return numberOfEdibleCrops;
     }
@@ -63,6 +65,8 @@ public class Crop implements Produce {
 
     @Override
     public boolean hasBeenFertilized() {
+        addEdibleCrops(yield());
+        System.out.println(getNumberOfEdibleCrops());
         return true;
     }
 

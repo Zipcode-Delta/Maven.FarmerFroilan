@@ -1,6 +1,7 @@
 package com.zipcodewilmington.froilansfarm;
 
 public class TomatoPlant extends Crop{
+
     public TomatoPlant(String name) {
         super(name);
     }
@@ -9,5 +10,8 @@ public class TomatoPlant extends Crop{
         this.setNumberOfEdibleCrops(30);
     }
 
-
+    @Override
+    public void setName(String name) {
+        setName("tomato");
+    }
 }

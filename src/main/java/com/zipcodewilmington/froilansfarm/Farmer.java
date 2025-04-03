@@ -1,8 +1,7 @@
 package com.zipcodewilmington.froilansfarm;
 
 public class Farmer extends Person implements Botanist{
-
-
+    Tractor tractor = new Tractor();
     @Override
     public int eat() {
         Crop tomato = new TomatoPlant();
@@ -26,7 +25,9 @@ public class Farmer extends Person implements Botanist{
     }
 
     @Override
-    public String mount() {
+    public String mount(String name) {
+        tractor.harvestCrops(new Crop("tomato"));
+        tractor.harvestCrops(new Crop("earCorn"));
         if (this.getName().equals("Farmer")){
             return "Mounting tractor";
         }

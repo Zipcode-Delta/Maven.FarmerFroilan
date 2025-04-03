@@ -13,8 +13,14 @@ public class Tractor extends FarmVehicle{
     }
 
     public int harvestCrops(Crop crop){
-        //
-        return 0;
+
+        if (crop.getName().equals("tomato")){
+            crop.setNumberOfEdibleCrops(15);
+        }
+        crop.setNumberOfEdibleCrops(100);
+
+        return crop.getNumberOfEdibleCrops();
     }
+
 
 }

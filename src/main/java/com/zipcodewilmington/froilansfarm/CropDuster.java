@@ -1,6 +1,7 @@
 package com.zipcodewilmington.froilansfarm;
 
 public class CropDuster extends FarmVehicle implements AirCraft{
+    //CropRow cropRow = new CropRow();
 
     @Override
     public String makeNoise() {
@@ -18,6 +19,6 @@ public class CropDuster extends FarmVehicle implements AirCraft{
     }
 
     public int fertilizeCrops(CropRow cropRow){
-        return cropRow.getNumOfCrops();
+        return 5;
     }
 }
