@@ -35,5 +35,9 @@ public class ChickenCoop {
         return chickenCoop.getByName(name);
     }
 
+    public Chicken getByIndex(int index) {
+        return chickenCoop.getByIndex(index);
+    }
+
 
 }

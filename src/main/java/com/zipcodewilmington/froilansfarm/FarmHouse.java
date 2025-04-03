@@ -33,4 +33,8 @@ public class FarmHouse {
         return farmhouse.getByName(name);
     }
 
+    public Person getByIndex(int index) {
+        return farmhouse.getByIndex(index);
+    }
+
 }
