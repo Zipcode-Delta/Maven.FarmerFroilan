@@ -63,6 +63,24 @@ class FarmHouseTest {
     }
 
     @Test
+    public void test1getPersonByIndex() {
+        FarmHouse farmHouseTest = new FarmHouse();
+        Person person1 = new Farmer();
+        farmHouseTest.add(person1);
+        assertEquals(person1, farmHouseTest.getByIndex(0));
+    }
+
+    @Test
+    public void test2getPersonByIndex() {
+        FarmHouse farmHouseTest = new FarmHouse();
+        Person farmer = new Farmer();
+        Person pilot = new Pilot();
+        farmHouseTest.add(farmer); farmHouseTest.add(pilot);
+        assertEquals(farmer, farmHouseTest.getByIndex(0));
+        assertEquals(pilot, farmHouseTest.getByIndex(1));
+    }
+
+    @Test
     public void test1getNumOfPeople() {
         FarmHouse farmHouseTest = new FarmHouse();
         int expected = 0;

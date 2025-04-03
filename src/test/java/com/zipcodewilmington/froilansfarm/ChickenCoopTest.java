@@ -66,6 +66,26 @@ class ChickenCoopTest {
     }
 
     @Test
+    public void test1getChickenByIndex() {
+        ChickenCoop coop = new ChickenCoop();
+        Chicken chicken1 = new Chicken();
+        Chicken chicken2 = new Chicken();
+        coop.add(chicken1); coop.add(chicken2);
+        assertEquals(chicken2, coop.getByIndex(1));
+    }
+
+    @Test
+    public void test2getChickenByIndex() {
+        ChickenCoop coop1 = new ChickenCoop();
+        ChickenCoop coop2 = new ChickenCoop();
+        Chicken chicken1 = new Chicken();
+        Chicken chicken2 = new Chicken();
+        coop1.add(chicken1); coop2.add(chicken2);
+        assertEquals(chicken1, coop1.getByIndex(0));
+        assertEquals(chicken2, coop2.getByIndex(0));
+    }
+
+    @Test
     public void test1getChickenByName() {
         ChickenCoop chickenCoop = new ChickenCoop();
         assertNull(chickenCoop.getByName("Penny"));

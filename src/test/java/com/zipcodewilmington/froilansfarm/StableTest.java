@@ -63,6 +63,29 @@ class StableTest {
     }
 
     @Test
+    public void test1getHorseByIndex() {
+        Stable stable = new Stable();
+        Horse horse = new Horse();
+        stable.add(horse);
+        assertEquals(horse, stable.getByIndex(0));
+    }
+
+    @Test
+    public void test2getHorseByIndex() {
+        Stable stable1 = new Stable();
+        Stable stable2 = new Stable();
+        Horse horse1 = new Horse();
+        Horse horse2 = new Horse();
+        Horse horse3 = new Horse();
+        stable1.add(horse1);
+        stable2.add(horse2);
+        stable2.add(horse3);
+        assertEquals(horse1, stable1.getByIndex(0));
+        assertEquals(horse2, stable2.getByIndex(0));
+        assertEquals(horse3, stable2.getByIndex(1));
+    }
+
+    @Test
     public void test1getHorseByName() {
         Stable stableTest = new Stable();
         assertNull(stableTest.getByName("Henry"));
