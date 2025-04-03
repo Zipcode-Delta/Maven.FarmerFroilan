@@ -27,6 +27,10 @@ public class ChickenCoop {
         chickenCoop.removeByName(name);
     }
 
+    public Chicken getChicken(Chicken chicken) {
+        return chickenCoop.getLivingThing(chicken);
+    }
+
     public Chicken getByName(String name) {
         return chickenCoop.getByName(name);
     }

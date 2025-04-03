@@ -25,6 +25,10 @@ public class FarmHouse {
         farmhouse.removeByName(name);
     }
 
+    public Person getPerson(Person person) {
+        return farmhouse.getLivingThing(person);
+    }
+
     public Person getByName(String name) {
         return farmhouse.getByName(name);
     }
