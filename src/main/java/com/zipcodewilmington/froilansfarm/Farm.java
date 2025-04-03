@@ -11,6 +11,15 @@ public class Farm {
     ChickenCoop coop4 = new ChickenCoop();
     Field field = new Field();
 
+    public void setUp() {
+        Farmer froilan = new Farmer();
+        froilan.setName("Froilan");
+        Pilot froilanda = new Pilot();
+        froilanda.setName("Froilanda");
+        farmHouse.add(froilan);
+        farmHouse.add(froilanda);
+    }
+
     void runFarm() {
 
     }
