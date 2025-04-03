@@ -51,7 +51,7 @@ public class Farm {
     }
 
     public void morningRoutine() {
-        //rideHorse();
+        //rideHorse(horse);
         feedHorse();
         eatBreakfast();
         //do we want to harvest chicken eggs daily? every other day?
@@ -69,6 +69,7 @@ public class Farm {
     }
 
     public boolean rideHorse(Horse horse) {
+
         horse.ride();
         return true;
     }
