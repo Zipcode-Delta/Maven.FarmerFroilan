@@ -87,7 +87,7 @@ public class Farm {
 
         //write out the effects of mounting cropduster and then dismounts
         froilanda.dismount(froilanda.getName());
-    }
+    } //make test class
 
     public void tuesdayRoutine() {
         updateSpectator("Today is Tuesday");
@@ -96,31 +96,31 @@ public class Farm {
         froilan.mount(froilan.getName());
         //Continue process that happens when tractor is mounted.
         froilan.dismount(froilan.getName());
-    }
+    } //make test class
 
     public void wednesdayRoutine() {
         updateSpectator("Today is Wednesday");
         morningRoutine();
         //additional routines TBD
-    }
+    } //make test class?
 
     public void thursdayRoutine() {
         updateSpectator("Today is Thursday");
         morningRoutine();
         //additional routines TBD
-    }
+    } //make test class?
 
     public void fridayRoutine() {
         updateSpectator("Today is Friday");
         morningRoutine();
         //additional routines TBD
-    }
+    } //make test class?
 
     public void saturdayRoutine() {
         updateSpectator("Today is Saturday");
         morningRoutine();
         //additional routines TBD
-    }
+    } //make test class?
 
     public void morningRoutine() {
         updateSpectator(froilan.getName() + " and " + froilanda.getName() + " ride all 10 horses");
