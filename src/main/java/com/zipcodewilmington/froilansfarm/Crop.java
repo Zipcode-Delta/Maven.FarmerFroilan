@@ -8,15 +8,13 @@ public class Crop implements Produce {
     public boolean harvested;
 
 
-//    public Crop(String name) {
-//        this.name = name;
-//        this.numberOfEdibleCrops = 0;
-//        this.harvested = false;
-//    }
-
     public Crop(String name) {
-        this.name = name;
-    }
+      this.name = name;
+        this.numberOfEdibleCrops = 0;
+       this.harvested = false;
+   }
+
+
 
     public boolean harvest() {
         if (hasBeenHarvested()) {

@@ -65,7 +65,7 @@ public class HorseTest {
     public void testRide1(){
         Horse horse = new Horse();
 
-        //String expectedNoise = "Cluck cluck";
+        String expectedNoise = "Cluck cluck";
 
         Assert.assertFalse( horse.ride());
     }
