@@ -39,6 +39,9 @@ public class Farmer extends Person implements Botanist{
 
     @Override
     public String mount(String name) {
+        System.out.println(name + " Mount Tractor");
+        tractor.ride();
+        System.out.println(tractor.makeNoise());
         tractor.harvestCrops(new Crop("tomato"));
         tractor.harvestCrops(new Crop("earCorn"));
         if (this.getName().equals("Froilan")){
@@ -50,9 +53,7 @@ public class Farmer extends Person implements Botanist{
 
     @Override
     public String dismount(String name) {
-        System.out.println(name + "Mounted Tractor");
-        tractor.ride();
-        System.out.println(tractor.makeNoise());
+        System.out.println(name + " Unmounted Tractor");
         if (this.getName().equals("Froilan")){
             return "Dismounting tractor";
         }
