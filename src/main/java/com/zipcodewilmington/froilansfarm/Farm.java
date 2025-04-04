@@ -102,18 +102,25 @@ public class Farm {
         updateSpectator("Today is Wednesday");
         morningRoutine();
         //additional routines TBD
+        froilan.plant();
     } //make test class?
 
     public void thursdayRoutine() {
         updateSpectator("Today is Thursday");
         morningRoutine();
         //additional routines TBD
+        froilanda.mount(froilanda.getName());
+        //write effects of cropduster, then dismount
+        froilanda.dismount(froilanda.getName());
     } //make test class?
 
     public void fridayRoutine() {
         updateSpectator("Today is Friday");
         morningRoutine();
         //additional routines TBD
+        froilan.mount(froilan.getName());
+        //continue process that happens when tractor is mounted
+        froilan.dismount(froilan.getName());
     } //make test class?
 
     public void saturdayRoutine() {
@@ -132,42 +139,55 @@ public class Farm {
 
     public boolean feedHorse() {
         int numberOfCornFed = 0;
+        int horsesFed = 0;
         for (int i = 0; i < stable1.getNumOfHorses(); i++) {
             stable1.getByIndex(i).eat(earCorn);
             numberOfCornFed += 3;
-            updateSpectator(stable1.getByIndex(i).getName() + " has been fed 3 ears of corn");
+            horsesFed++;
+            //updateSpectator(stable1.getByIndex(i).getName() + " has been fed 3 ears of corn");
         }
         for (int i = 0; i < stable2.getNumOfHorses(); i++) {
             stable1.getByIndex(i).eat(earCorn);
             numberOfCornFed += 3;
-            updateSpectator(stable1.getByIndex(i).getName() + " has been fed 3 ears of corn");
+            horsesFed++;
+            //updateSpectator(stable1.getByIndex(i).getName() + " has been fed 3 ears of corn");
         }
         for (int i = 0; i < stable3.getNumOfHorses(); i++) {
             stable1.getByIndex(i).eat(earCorn);
             numberOfCornFed += 3;
-            updateSpectator(stable1.getByIndex(i).getName() + " has been fed 3 ears of corn");
+            horsesFed++;
+            //updateSpectator(stable1.getByIndex(i).getName() + " has been fed 3 ears of corn");
         }
         //return however much EarCorn - amt to be fed > 0?
         // number of corn set in horse eat() method?? does that need to be moved?
-        updateSpectator("All horses were fed a total of " + numberOfCornFed + " ears of corn.");
+        if (horsesFed == 10) {
+            updateSpectator("All horses were fed a total of " + numberOfCornFed + " ears of corn.");
+        }
         return true;
     }
 
     public boolean rideHorse() {
+        int horsesRidden = 0;
         for (int i = 0; i < stable1.getNumOfHorses(); i++) {
             stable1.getByIndex(i).ride();
             stable1.getByIndex(i).isBeingRidden();
-            updateSpectator(stable1.getByIndex(i).getName() + " ridden");
+            horsesRidden++;
+            //updateSpectator(stable1.getByIndex(i).getName() + " ridden");
         }
         for (int i = 0; i < stable2.getNumOfHorses(); i++) {
             stable1.getByIndex(i).ride();
             stable1.getByIndex(i).isBeingRidden();
-            updateSpectator(stable1.getByIndex(i).getName() + " ridden");
+            horsesRidden++;
+            //updateSpectator(stable1.getByIndex(i).getName() + " ridden");
         }
         for (int i = 0; i < stable3.getNumOfHorses(); i++) {
             stable1.getByIndex(i).ride();
             stable1.getByIndex(i).isBeingRidden();
-            updateSpectator(stable1.getByIndex(i).getName() + " ridden");
+            horsesRidden++;
+            //updateSpectator(stable1.getByIndex(i).getName() + " ridden");
+        }
+        if (horsesRidden == 10) {
+            updateSpectator("All horses have been out for a ride");
         }
         return true;
     }

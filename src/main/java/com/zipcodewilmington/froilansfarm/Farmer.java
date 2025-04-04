@@ -33,7 +33,7 @@ public class Farmer extends Person implements Botanist{
     @Override
     public String plant() {
         Farm farm = new Farm();
-        farm.updateSpectator("Farmer Plants 3 rows of crops ");
+        farm.updateSpectator(this.getName() + " Plants 3 rows of crops ");
         return "";
     }
 
