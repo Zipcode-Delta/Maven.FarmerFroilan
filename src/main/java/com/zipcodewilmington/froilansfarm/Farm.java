@@ -198,6 +198,7 @@ public class Farm {
         froilan.eat(tomato);
         froilanda.eat(earCorn, chicken2);
         froilanda.eat(tomato);
+        //System.out.println("Froilin and Froilinda have both eaten breakfast");
         return "Has eaten breakfast";
     }
     //    subtract from totals for edible crops, return true if all values ?

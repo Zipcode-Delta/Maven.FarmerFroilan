@@ -12,6 +12,7 @@ public class Pilot extends Person {
             crop.removeEdibleCrops(2);
         }
         edibleEggs.setNumOfEdibleEggs(edibleEggs.getNumOfEdibleEggs()-2);
+        System.out.println("Froilinda ate 1 tomato, 2 ears of corn and 2 eggs." );
         return 0;
     }
 

@@ -10,6 +10,7 @@ public class Farmer extends Person implements Botanist{
             crop.removeEdibleCrops(1);
         }
         edibleEggs.setNumOfEdibleEggs(edibleEggs.getNumOfEdibleEggs());
+        System.out.println("Froilin ate 2 tomato, 1 ears of corn and 5 eggs." );
         return 0;
     }
 
