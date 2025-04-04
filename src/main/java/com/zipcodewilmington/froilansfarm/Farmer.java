@@ -43,6 +43,7 @@ public class Farmer extends Person implements Botanist{
         tractor.ride();
         tractor.harvestCrops(new Crop("tomato"));
         tractor.harvestCrops(new Crop("earCorn"));
+        tractor.harvestCrops(new Crop("yamPlant"));
         if (this.getClass() == Farmer.class && !this.getName().equals("Pilot")){
             return name + " Mounting tractor";
         }
