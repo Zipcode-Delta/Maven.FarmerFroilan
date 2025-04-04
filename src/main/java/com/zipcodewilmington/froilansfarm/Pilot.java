@@ -37,7 +37,7 @@ public class Pilot extends Person {
         System.out.println(cropDuster.makeNoise());
         cropDuster.fly();
         cropDuster.fertilizeCrops(cropRow);
-        if (this.getName().equals("froilinda")) {
+        if (this.getName().equals("Froilinda")) {
             return "Mounting Crop Duster";
         }
         return "Unable to mount Crop Duster";
@@ -46,7 +46,7 @@ public class Pilot extends Person {
     @Override
     public String dismount(String name) {
         System.out.println(name + " Unmounted CropDuster");
-        if (this.getName().equals("Pilot")){
+        if (this.getName().equals("Froilanda")){
             return "Dismounting cropDuster";
         }
         return "Not allowed to mount Crop Duster";
