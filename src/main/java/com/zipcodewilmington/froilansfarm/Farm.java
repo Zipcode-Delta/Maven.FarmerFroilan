@@ -25,7 +25,13 @@ public class Farm {
     Chicken chicken11 = new Chicken(); Chicken chicken12 = new Chicken();
     Chicken chicken13 = new Chicken(); Chicken chicken14 = new Chicken();
     Chicken chicken15 = new Chicken();
-
+    CropRow tomatoRow = new CropRow();
+    CropRow earCornRow = new CropRow();
+    CropRow yamsRow1 = new CropRow();
+    CropRow yamsRow2 = new CropRow();
+    CropRow yamsRow3 = new CropRow();
+    Crop tomato = new TomatoPlant("tomato");
+    Crop earCorn = new CornStalk("earCorn");
 
 
 
@@ -42,6 +48,13 @@ public class Farm {
         coop2.add(chicken5); coop2.add(chicken6); coop2.add(chicken7); coop2.add(chicken8);
         coop3.add(chicken9); coop3.add(chicken10); coop3.add(chicken11); coop3.add(chicken12);
         coop4.add(chicken13); coop4.add(chicken14); coop4.add(chicken15);
+        field.addToCropRows(tomatoRow);
+        field.addToCropRows(earCornRow);
+        field.addToCropRows(yamsRow1);
+        field.addToCropRows(yamsRow2);
+        field.addToCropRows(yamsRow3);
+        tomato.setNumberOfEdibleCrops(10);
+        earCorn.setNumberOfEdibleCrops(100);
     }
 
     public void runFarm() {
@@ -120,15 +133,18 @@ public class Farm {
     public boolean feedHorse() {
         int numberOfCornFed = 0;
         for (int i = 0; i < stable1.getNumOfHorses(); i++) {
-            stable1.getByIndex(i).eat();
+            stable1.getByIndex(i).eat(earCorn);
+            numberOfCornFed += 3;
             updateSpectator(stable1.getByIndex(i).getName() + " has been fed 3 ears of corn");
         }
         for (int i = 0; i < stable2.getNumOfHorses(); i++) {
-            stable1.getByIndex(i).eat();
+            stable1.getByIndex(i).eat(earCorn);
+            numberOfCornFed += 3;
             updateSpectator(stable1.getByIndex(i).getName() + " has been fed 3 ears of corn");
         }
         for (int i = 0; i < stable3.getNumOfHorses(); i++) {
-            stable1.getByIndex(i).eat();
+            stable1.getByIndex(i).eat(earCorn);
+            numberOfCornFed += 3;
             updateSpectator(stable1.getByIndex(i).getName() + " has been fed 3 ears of corn");
         }
         //return however much EarCorn - amt to be fed > 0?
@@ -158,8 +174,10 @@ public class Farm {
     //        return what??
     // }
     public String eatBreakfast() {
-        froilan.eat();
-        froilanda.eat();
+        froilan.eat(earCorn, chicken1);
+        froilan.eat(tomato);
+        froilanda.eat(earCorn, chicken2);
+        froilanda.eat(tomato);
         return "Has eaten breakfast";
     }
     //    subtract from totals for edible crops, return true if all values ?

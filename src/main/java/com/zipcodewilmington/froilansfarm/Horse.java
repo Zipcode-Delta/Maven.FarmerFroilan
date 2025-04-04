@@ -35,10 +35,9 @@ public class Horse extends Animal implements Rideable, NoiseMaker{
     }
 
     @Override
-    public int eat() {
-        CornStalk earCorn = new CornStalk();
-        earCorn.setNumberOfEdibleCrops(earCorn.getNumberOfEdibleCrops()-30);
-        return 0;
+    public int eat(Crop crop) {
+        crop.removeEdibleCrops(3);
+        return crop.getNumberOfEdibleCrops();
     }
 
 

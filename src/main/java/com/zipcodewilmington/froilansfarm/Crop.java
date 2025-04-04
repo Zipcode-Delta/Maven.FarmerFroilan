@@ -1,7 +1,5 @@
 package com.zipcodewilmington.froilansfarm;
 
-import java.util.Random;
-
 public class Crop implements Produce {
 
 
@@ -10,13 +8,14 @@ public class Crop implements Produce {
     public boolean harvested;
 
 
+//    public Crop(String name) {
+//        this.name = name;
+//        this.numberOfEdibleCrops = 0;
+//        this.harvested = false;
+//    }
+
     public Crop(String name) {
         this.name = name;
-        this.numberOfEdibleCrops = 0;
-        this.harvested = false;
-    }
-
-    public Crop() {
     }
 
     public boolean harvest() {
@@ -27,7 +26,7 @@ public class Crop implements Produce {
     }
 
     public void setNumberOfEdibleCrops(int number){
-        this.numberOfEdibleCrops += number;
+        this.numberOfEdibleCrops = number;
     }
 
     public boolean hasBeenHarvested() {
@@ -38,7 +37,7 @@ public class Crop implements Produce {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -46,16 +45,24 @@ public class Crop implements Produce {
     }
 
     public int getNumberOfEdibleCrops() {
-        return numberOfEdibleCrops;
-        //if (NumberOfEdibleCrops>0)
-        // return edibleCrops;
+        return this.numberOfEdibleCrops;
+
+    }
+
+    public int removeEdibleCrops(int numberOfEdibleCrops){
+        if (numberOfEdibleCrops>0){
+            return this.numberOfEdibleCrops -= numberOfEdibleCrops;
+        } else {
+            return this.numberOfEdibleCrops;
+        }
+
     }
 
     public int addEdibleCrops(int edibleCrops) {
         if (edibleCrops > 0) {
-            numberOfEdibleCrops += edibleCrops;
+            this.numberOfEdibleCrops += edibleCrops;
         }
-        return numberOfEdibleCrops;
+        return this.numberOfEdibleCrops;
     }
 
     @Override

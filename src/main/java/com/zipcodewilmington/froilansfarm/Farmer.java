@@ -3,14 +3,25 @@ package com.zipcodewilmington.froilansfarm;
 public class Farmer extends Person implements Botanist{
     Tractor tractor = new Tractor();
     @Override
-    public int eat() {
-        Crop tomato = new TomatoPlant();
-        Crop earCorn = new CornStalk();
-        Chicken edibleEggs = new Chicken();
-        tomato.setNumberOfEdibleCrops(tomato.getNumberOfEdibleCrops()-2);
-        earCorn.setNumberOfEdibleCrops(earCorn.getNumberOfEdibleCrops()-1);
-        edibleEggs.setNumOfEdibleEggs(edibleEggs.getNumOfEdibleEggs()-5);
-        return super.eat();
+    public int eat(Crop crop, Chicken edibleEggs) {
+        if (crop.getName().equals("tomato")){
+            crop.removeEdibleCrops(2);
+        } else if (crop.getName().equals("earCorn")){
+            crop.removeEdibleCrops(1);
+        }
+        edibleEggs.setNumOfEdibleEggs(edibleEggs.getNumOfEdibleEggs());
+        return 0;
+    }
+
+
+    @Override
+    public int eat(Crop crop) {
+        if (crop.getName().equals("tomato")){
+            crop.removeEdibleCrops(2);
+        } else if (crop.getName().equals("earCorn")){
+            crop.removeEdibleCrops(1);
+        }
+        return 0;
     }
 
 

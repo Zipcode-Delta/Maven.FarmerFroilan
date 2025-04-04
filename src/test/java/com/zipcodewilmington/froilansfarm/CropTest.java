@@ -15,7 +15,7 @@ assertEquals( "Tomato", crop.getName());
 
 @Test
 void testHarvestCrop () {
- Crop crop = new Crop ();
+ Crop crop = new Crop ("EarCorn");
  crop.setName("EarCorn");
 assertFalse(crop.harvest());
 //crop.getName();

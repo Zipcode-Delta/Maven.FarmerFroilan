@@ -3,20 +3,22 @@ package com.zipcodewilmington.froilansfarm;
 import java.util.Random;
 
 public class Chicken extends Animal implements Produce {
-    private int numOfEdibleEggs = 4;
-
-    double rand = Math.ceil(Math.random()*2);
+    private int numOfEdibleEggs;
 
     public Chicken() {
 
     }
 
     public int getNumOfEdibleEggs() {
-        return numOfEdibleEggs;
+        return this.numOfEdibleEggs;
     }
 
     public void setNumOfEdibleEggs(int numOfEdibleEggs) {
-        this.numOfEdibleEggs += numOfEdibleEggs;
+        this.numOfEdibleEggs = numOfEdibleEggs;
+    }
+
+    public int removeNumberOfEggs(int numOfEdibleEggsToRemove){
+        return this.numOfEdibleEggs -= numOfEdibleEggsToRemove;
     }
 
     @Override

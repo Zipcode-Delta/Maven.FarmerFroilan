@@ -10,15 +10,18 @@ class CornStalkTest {
 
     @Test
     public void getNumberOfEdibleCropsTest() {
-        Crop earCorn = new CornStalk();
+        Crop earCorn = new CornStalk("earCorn");
+        earCorn.setNumberOfEdibleCrops(100);
 
         Assert.assertEquals(100, earCorn.getNumberOfEdibleCrops());
     }
 
     @Test
     public void setNumberOfEdibleCropsTest() {
-        Crop earCorn = new CornStalk();
-        earCorn.setNumberOfEdibleCrops(20);
+        Crop earCorn = new CornStalk("earCorn");
+        earCorn.setNumberOfEdibleCrops(100);
+        earCorn.addEdibleCrops(20);
+
 
         Assert.assertEquals(120, earCorn.getNumberOfEdibleCrops());
     }

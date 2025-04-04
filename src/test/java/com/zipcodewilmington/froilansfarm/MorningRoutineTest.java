@@ -7,10 +7,11 @@ public class MorningRoutineTest {
     @Test
     public void FeedHorseTest() {
         Horse horse = new Horse();
-        CornStalk earCorn = new CornStalk();
-        horse.eat();
+        CornStalk earCorn = new CornStalk("earCorn");
+        earCorn.setNumberOfEdibleCrops(50);
+        horse.eat(earCorn);
 
-        int expectedNumberOfEarCorn = 100;
+        int expectedNumberOfEarCorn = 47;
 
         Assert.assertEquals(expectedNumberOfEarCorn, earCorn.getNumberOfEdibleCrops());
     }
@@ -18,29 +19,56 @@ public class MorningRoutineTest {
     @Test
     public void FeedHorseTest2() {
         Horse horse = new Horse();
-        CornStalk earCorn = new CornStalk();
-        horse.eat();
+        Crop earCorn = new CornStalk("earCorn");
+        earCorn.setNumberOfEdibleCrops(100);
+        horse.eat(earCorn);
+        horse.eat(earCorn);
 
-        int expectedNumberOfEarCorn = 100;
+        int expectedNumberOfEarCorn = 94;
 
         Assert.assertEquals(expectedNumberOfEarCorn, earCorn.getNumberOfEdibleCrops());
     }
 
-//    @Test
-//    public void FeedFarmerTest() {
-//        Person farmer = new Farmer();
-//        Crop earCorn = new CornStalk();
-//        Crop tomato = new TomatoPlant();
-//        Chicken edibleEggs = new Chicken();
-//        farmer.eat();
-//
-//
-//        int expectedNumberOfEarCorn = 100;
-//        int expectedNumberOfTomato = 30;
-//        int expectedNumberOfEdibleEggs = 20;
-//
-//        Assert.assertEquals(expectedNumberOfEarCorn, earCorn.getNumberOfEdibleCrops());
-//        Assert.assertEquals(expectedNumberOfTomato, tomato.getNumberOfEdibleCrops());
-//        Assert.assertEquals(expectedNumberOfEdibleEggs, edibleEggs.getNumOfEdibleEggs());
-//    }
+    @Test
+    public void FeedFarmerTest() {
+        Farmer froilin = new Farmer();
+        Crop tomato = new TomatoPlant("tomato");
+        Crop earCorn = new TomatoPlant("earCorn");
+        earCorn.setNumberOfEdibleCrops(100);
+        tomato.setNumberOfEdibleCrops(30);
+        Chicken edibleEggs = new Chicken();
+        edibleEggs.setNumOfEdibleEggs(35);
+        froilin.eat(earCorn, edibleEggs);
+        froilin.eat(tomato);
+
+        int expectedNumberOfEarCorn = 99;
+        int expectedNumberOfTomato = 28;
+        int expectedNumberOfEdibleEggs = edibleEggs.removeNumberOfEggs(5);
+
+        Assert.assertEquals(expectedNumberOfEarCorn, earCorn.getNumberOfEdibleCrops());
+        Assert.assertEquals(expectedNumberOfTomato, tomato.getNumberOfEdibleCrops());
+        Assert.assertEquals(expectedNumberOfEdibleEggs, edibleEggs.getNumOfEdibleEggs());
+    }
+
+    @Test
+    public void FeedPilotTest2() {
+        Farmer froilin = new Farmer();
+        Crop tomato = new TomatoPlant("tomato");
+        Crop earCorn = new TomatoPlant("earCorn");
+        earCorn.setNumberOfEdibleCrops(100);
+        tomato.setNumberOfEdibleCrops(30);
+        Chicken edibleEggs = new Chicken();
+        edibleEggs.setNumOfEdibleEggs(35);
+        froilin.eat(earCorn, edibleEggs);
+        froilin.eat(tomato);
+
+        int expectedNumberOfEarCorn = earCorn.removeEdibleCrops(2);
+        int expectedNumberOfTomato = tomato.removeEdibleCrops(1);
+        int expectedNumberOfEdibleEggs = edibleEggs.removeNumberOfEggs(2);
+
+        Assert.assertEquals(expectedNumberOfEarCorn, earCorn.getNumberOfEdibleCrops());
+        Assert.assertEquals(expectedNumberOfTomato, tomato.getNumberOfEdibleCrops());
+        Assert.assertEquals(expectedNumberOfEdibleEggs, edibleEggs.getNumOfEdibleEggs());
+    }
+
 }

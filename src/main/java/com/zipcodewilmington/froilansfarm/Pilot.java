@@ -5,14 +5,24 @@ public class Pilot extends Person {
     CropRow cropRow = new CropRow();
 
     @Override
-    public int eat() {
-        Crop tomato = new TomatoPlant();
-        Crop earCorn = new CornStalk();
-        Chicken edibleEggs = new Chicken();
-        tomato.setNumberOfEdibleCrops(tomato.getNumberOfEdibleCrops()-1);
-        earCorn.setNumberOfEdibleCrops(earCorn.getNumberOfEdibleCrops()-2);
+    public int eat(Crop crop, Chicken edibleEggs) {
+        if (crop.getName().equals("tomato")){
+            crop.removeEdibleCrops(1);
+        } else if (crop.getName().equals("earCorn")){
+            crop.removeEdibleCrops(2);
+        }
         edibleEggs.setNumOfEdibleEggs(edibleEggs.getNumOfEdibleEggs()-2);
-        return super.eat();
+        return 0;
+    }
+
+    @Override
+    public int eat(Crop crop) {
+        if (crop.getName().equals("tomato")){
+            crop.removeEdibleCrops(1);
+        } else if (crop.getName().equals("earCorn")){
+            crop.removeEdibleCrops(2);
+        }
+        return 0;
     }
 
     @Override

@@ -7,9 +7,12 @@ public class CornStalk extends Crop{
         super(name);
     }
 
-    public CornStalk() {
-        this.setNumberOfEdibleCrops(100);
+
+    @Override
+    public void setNumberOfEdibleCrops(int number) {
+        super.setNumberOfEdibleCrops(number);
     }
+
     @Override
     public void setName(String name) {
 
