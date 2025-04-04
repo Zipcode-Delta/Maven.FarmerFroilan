@@ -43,7 +43,7 @@ public class Farmer extends Person implements Botanist{
         tractor.ride();
         tractor.harvestCrops(new Crop("tomato"));
         tractor.harvestCrops(new Crop("earCorn"));
-        if (this.getClass() == Farmer.class){
+        if (this.getClass() == Farmer.class && !this.getName().equals("Pilot")){
             return name + " Mounting tractor";
         }
 
@@ -54,7 +54,7 @@ public class Farmer extends Person implements Botanist{
     public String dismount(String name) {
         System.out.println(tractor.makeNoise());
         System.out.println(name + " Unmounted Tractor");
-        if (this.getClass() == Farmer.class){
+        if (this.getClass() == Farmer.class && !this.getName().equals("Pilot")){
             return name + " Dismounting tractor";
         }
         return "Unable to mount Crop Duster";
