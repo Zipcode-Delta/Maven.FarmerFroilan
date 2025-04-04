@@ -149,7 +149,7 @@ public class Farm {
         }
         //return however much EarCorn - amt to be fed > 0?
         // number of corn set in horse eat() method?? does that need to be moved?
-        updateSpectator("All horses were fed a total of " + numberOfCornFed + ".");
+        updateSpectator("All horses were fed a total of " + numberOfCornFed + " ears of corn.");
         return true;
     }
 

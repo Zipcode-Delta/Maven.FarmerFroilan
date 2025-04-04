@@ -28,12 +28,12 @@ public class PilotTest {
 
     @Test
     public void TestMount(){
-        Person pilot = new Pilot();
-        pilot.setName("Pilot");
+        Person farmer = new Farmer();
+        farmer.setName("Pilot");
 
         String expected = "Unable to mount Crop Duster";
 
-        Assert.assertEquals(expected, pilot.mount("Pilot"));
+        Assert.assertEquals(expected, farmer.mount("Pilot"));
     }
 
     @Test

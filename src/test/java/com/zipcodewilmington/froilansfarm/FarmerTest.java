@@ -41,7 +41,7 @@ public class FarmerTest {
         Person farmer = new Farmer();
         farmer.setName("Farmer");
 
-        String expected = "Mounting tractor";
+        String expected = "Farmer Mounting tractor";
 
         Assert.assertEquals(expected, farmer.mount("Farmer"));
     }
@@ -61,9 +61,9 @@ public class FarmerTest {
         Person farmer = new Farmer();
         farmer.setName("Farmer");
 
-        String expected = "Dismounting tractor";
+        String expected = "Farmer Dismounting tractor";
 
-        Assert.assertEquals(expected, farmer.dismount("Pilot"));
+        Assert.assertEquals(expected, farmer.dismount("Farmer"));
     }
 
     @Test
